@@ -1,0 +1,108 @@
+% fontspec and mainfont set via _quarto-print-kdp.yml (mainfont: TeX Gyre Pagella)
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+% --- Cover page (inserted before title) ---
+\AtBeginDocument{%
+  \AddToShipoutPictureBG*{%
+    \AtPageLowerLeft{\includegraphics[width=\paperwidth,height=\paperheight]{images/cover-ebook-1600x2560.png}}%
+  }%
+  \thispagestyle{empty}%
+  \null%
+  \clearpage%
+  \setcounter{page}{1}% Reset to odd so \frontmatter's \cleardoublepage won't insert blank
+}
+\usepackage{float}
+\usepackage{microtype}          % Kerning and character protrusion
+\usepackage{xurl}               % Safe line-breaking for long URLs
+\clubpenalty=10000               % Prevent orphan lines
+\widowpenalty=10000              % Prevent widow lines
+
+% --- Float spacing (tightened for density) ---
+\setlength{\textfloatsep}{4pt plus 1pt minus 1pt}
+\setlength{\intextsep}{3pt plus 1pt minus 1pt}
+\setlength{\floatsep}{3pt plus 1pt minus 1pt}
+
+% --- Chapter heading spacing (KOMA-Script) ---
+\RedeclareSectionCommand[
+  beforeskip=18pt,
+  afterskip=8pt
+]{chapter}
+\RedeclareSectionCommand[
+  beforeskip=10pt,
+  afterskip=4pt
+]{section}
+\RedeclareSectionCommand[
+  beforeskip=6pt,
+  afterskip=3pt
+]{subsection}
+
+% --- Paragraph spacing ---
+\setlength{\parskip}{0pt plus 0.5pt}
+
+% --- Compact lists ---
+\usepackage{enumitem}
+\setlist{nosep, topsep=1pt, partopsep=0pt, parsep=0pt, itemsep=1pt}
+
+% --- Block quote tightening ---
+\renewenvironment{quote}
+  {\list{}{\leftmargin=1.5em\rightmargin=1.5em\topsep=3pt\parsep=1pt}\item\relax}
+  {\endlist}
+
+% --- ToC compactness ---
+\RedeclareSectionCommand[tocindent=0pt]{chapter}
+
+% --- Display math spacing ---
+\setlength{\abovedisplayskip}{4pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{4pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{2pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt}
+
+% --- Callout box (tcolorbox) compactness ---
+\AtBeginDocument{%
+  \tcbset{
+    boxsep=2pt,
+    left=2mm,
+    right=2mm,
+    top=1mm,
+    bottom=1mm,
+    toptitle=0.5mm,
+    bottomtitle=0.5mm,
+    before skip=4pt,
+    after skip=4pt,
+    fontupper=\small
+  }%
+}
+
+% --- Longtable spacing ---
+\AtBeginEnvironment{longtable}{%
+  \small
+  \setlength{\LTpre}{4pt}%
+  \setlength{\LTpost}{4pt}%
+}
+
+% --- Bibliography compactness ---
+\AtBeginDocument{%
+  \renewenvironment{CSLReferences}[2]%
+    {\small
+     \setlength{\parskip}{0pt}%
+     \setlength{\itemsep}{1pt plus 0.5pt}%
+     \setlength{\parsep}{0pt}%
+     \begin{list}{}%
+       {\setlength{\leftmargin}{1.5em}%
+        \setlength{\itemindent}{-1.5em}%
+        \setlength{\itemsep}{1pt plus 0.5pt}%
+        \setlength{\parsep}{0pt}}%
+    }%
+    {\end{list}}%
+}
+
+% --- Part page compactness (reduce vertical space on part title pages) ---
+\renewcommand*{\partformat}{\thepart\autodot\enskip}
+\RedeclareSectionCommand[
+  beforeskip=40pt,
+  afterskip=20pt
+]{part}
+
+% --- Figure scaling (ensure images don't exceed needed size) ---
+\setkeys{Gin}{width=\linewidth,totalheight=0.4\textheight,keepaspectratio}

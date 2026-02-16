@@ -1,0 +1,10 @@
+{
+  "script": "image_dpi_check",
+  "exit_code": 0,
+  "images_checked": 63,
+  "low_dpi_count": 0,
+  "missing_images": 0,
+  "total_size_mb": 10.47,
+  "errors": [],
+  "warnings": []
+}

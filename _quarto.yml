@@ -1,0 +1,109 @@
+lang: en
+
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Something Big Already Happened"
+  subtitle: "Tracking the AI Predictions That Came True"
+  author: "S.H. Ash"
+  date: last-modified
+  date-format: "MMMM D, YYYY"
+  language: en
+  reader-mode: true
+
+  search: true
+  repo-url: https://github.com/zeroshotpress/Something-Big-Already-Happened
+  repo-actions: [edit, issue]
+
+  sidebar:
+    style: docked
+
+  chapters:
+    - index.qmd
+    - chapters/00-frontmatter.qmd
+    - part: "Part I: The Predictions"
+      chapters:
+        - chapters/01-the-prediction.qmd
+        - chapters/02-voices-of-warning.qmd
+    - part: "Part II: The Evidence"
+      chapters:
+        - chapters/03-benchmark-revolution.qmd
+        - chapters/04-autonomous-frontier.qmd
+        - chapters/05-model-avalanche.qmd
+        - chapters/06-human-cost.qmd
+    - part: "Part III: The Inflection"
+      chapters:
+        - chapters/07-recursive-loop.qmd
+        - chapters/08-november-revolution.qmd
+        - chapters/09-software-factory.qmd
+        - chapters/10-compounding-teams.qmd
+    - part: "Part IV: The Broader Impact"
+      chapters:
+        - chapters/11-investment-tsunami.qmd
+        - chapters/12-geopolitical-chessboard.qmd
+    - part: "Part V: What Comes Next"
+      chapters:
+        - chapters/13-science-acceleration.qmd
+        - chapters/14-what-now.qmd
+
+bibliography: references/sources.bib
+csl: references/chicago-author-date.csl
+
+format:
+  html:
+    theme:
+      dark: darkly
+      light: flatly
+    css:
+      - styles/theme.css
+      - styles/components.css
+      - styles/print.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    search: true
+    code-link: true
+    code-fold: true
+    code-tools: true
+    fig-responsive: true
+    anchor-sections: true
+    smooth-scroll: true
+
+  epub:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-format: png
+    fig-dpi: 300
+
+  pdf:
+    documentclass: scrbook
+    classoption:
+      - openany
+    pdf-engine: lualatex
+    papersize: custom
+    geometry:
+      - paperwidth=6in
+      - paperheight=9in
+      - inner=0.55in
+      - outer=0.45in
+      - top=0.55in
+      - bottom=0.60in
+    fontsize: 10pt
+    mainfont: "TeX Gyre Pagella"
+    sansfont: "TeX Gyre Heros"
+    monofont: "TeX Gyre Cursor"
+    linestretch: 1.05
+    indent: true
+    fig-dpi: 300
+    fig-format: pdf
+    number-sections: true
+    toc: true
+    toc-depth: 2
+    colorlinks: true
+    link-citations: true
+    keep-tex: true
+    include-in-header:
+      - templates/print-header.tex

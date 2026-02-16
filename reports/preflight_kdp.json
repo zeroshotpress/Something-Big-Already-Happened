@@ -1,0 +1,8 @@
+{
+  "script": "preflight_kdp",
+  "exit_code": 0,
+  "pdf_found": true,
+  "passed": 5,
+  "failed": 0,
+  "warnings": 1
+}

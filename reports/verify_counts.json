@@ -1,0 +1,31 @@
+{
+  "script": "verify_counts",
+  "exit_code": 0,
+  "total_words": 80906,
+  "chapter_word_counts": {
+    "00-frontmatter.qmd": 360,
+    "01-the-prediction.qmd": 6117,
+    "02-voices-of-warning.qmd": 5511,
+    "03-benchmark-revolution.qmd": 5536,
+    "04-autonomous-frontier.qmd": 5392,
+    "05-model-avalanche.qmd": 6095,
+    "06-human-cost.qmd": 6384,
+    "07-recursive-loop.qmd": 5804,
+    "08-november-revolution.qmd": 5652,
+    "09-software-factory.qmd": 5596,
+    "10-compounding-teams.qmd": 5542,
+    "11-investment-tsunami.qmd": 5634,
+    "12-geopolitical-chessboard.qmd": 5882,
+    "13-science-acceleration.qmd": 5527,
+    "14-what-now.qmd": 5874
+  },
+  "chapters_scanned": 15,
+  "checks": 8,
+  "passed": 8,
+  "failed": 0,
+  "warnings": 1,
+  "errors": [],
+  "warning_messages": [
+    "Extra chapter numbers: [0]"
+  ]
+}

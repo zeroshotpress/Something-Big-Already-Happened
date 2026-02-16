@@ -1,0 +1,932 @@
+# source-registry.yml — 2-axis citation classification
+#
+# Schema:
+#   key:            BibTeX citation key (must match sources.bib)
+#   tier:           1 (official/primary journalism) | 2 (tech press) | 3 (aggregator/SEO)
+#   type:           primary | secondary | tertiary
+#   scope:          core | context
+#   paywalled:      yes | no
+#   url:            canonical URL
+#   archive_url:    archive.org URL (optional)
+#   notes:          brief description
+#
+# RULES:
+#   - Core claims → tier 1 AND (primary OR secondary) ONLY
+#   - Tier-3 → forbidden for core claims
+#   - paywalled=yes core claims must have a non-paywalled companion
+
+citations:
+  # === Core Essay ===
+  shumer2026:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://shumer.dev/something-big-is-happening"
+    archive_url: ""
+    notes: "Matt Shumer viral essay; 20M+ views; primary source for book thesis"
+
+  # === Anthropic / Dario Amodei ===
+  amodei2025:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://fortune.com/2025/05/28/anthropic-ceo-warning-ai-job-loss/"
+    notes: "Amodei warns 50% entry-level jobs at risk in 1-5 years"
+
+  amodei2026:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.darioamodei.com/essay/the-adolescence-of-technology"
+    notes: "20K-word essay on AI risks; country of geniuses in datacenter"
+
+  amodei2026_davos:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://fortune.com/2026/01/27/at-davos-ceos-said-ai-isnt-coming-for-jobs-as-fast-as-anthropic-ceo-dario-amodei-thinks/"
+    notes: "Amodei at Davos: software engineers replaced in 6-12 months"
+
+  # === OpenAI ===
+  openai2026_codex:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://openai.com/index/introducing-gpt-5-3-codex/"
+    notes: "GPT-5.3-Codex self-improving model announcement"
+
+  openai2025_gpt5:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://openai.com/index/introducing-gpt-5/"
+    notes: "GPT-5 release; 74.9% SWE-bench; 94.6% AIME"
+
+  openai2025_gpt52:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://openai.com/index/introducing-gpt-5-2/"
+    notes: "GPT-5.2 three variants; 400K context"
+
+  openai2025_stargate:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://openai.com/index/announcing-the-stargate-project/"
+    notes: "$500B AI infrastructure project"
+
+  # === METR ===
+  metr2025:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
+    notes: "Time horizons doubling every ~7 months"
+
+  metr2025_opus45:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.lesswrong.com/posts/q5ejXr4CRuPxkgzJD/claude-opus-4-5-achieves-50-time-horizon-of-around-4-hrs-49"
+    notes: "Opus 4.5 at 4hr 49min autonomous time horizon"
+
+  metr2025_gpt5:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://evaluations.metr.org/gpt-5-report/"
+    notes: "GPT-5 at 2.28hr autonomous time horizon"
+
+  # === Benchmarks ===
+  epoch2025_swebench:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://epoch.ai/benchmarks/swe-bench-verified"
+    notes: "Independent SWE-bench Verified tracker"
+
+  anthropic2024_swebench:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.anthropic.com/research/swe-bench-sonnet"
+    notes: "Claude 3.5 Sonnet at 49% SWE-bench"
+
+  # === Model Releases ===
+  anthropic2025_opus46:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.anthropic.com/news/claude-opus-4-6"
+    notes: "Opus 4.6 agent teams; 1M context beta"
+
+  xai2025_grok41:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://x.ai/news/grok-4-1"
+    notes: "Grok 4.1; 1483 Elo; 4.22% hallucination rate"
+
+  google2025_gemini3deepthink:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/"
+    notes: "Gemini 3 Deep Think; gold-medal IMO; GPQA 93.8%"
+
+  # === Market Events ===
+  cnbc2026_softwarecrash:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2026/02/04/software-stocks-plunge-us-ai-disruption.html"
+    notes: "Software stock crash Feb 2026"
+
+  fortune2026_selloff:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://fortune.com/2026/02/06/anthropic-claude-opus-4-6-stock-selloff-new-upgrade/"
+    notes: "Trillion-dollar market selloff"
+
+  # === Industry / Jobs ===
+  hbr2026_aijobs:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://hbr.org/2026/01/companies-are-laying-off-workers-because-of-ais-potential-not-its-performance"
+    notes: "Worker concern 28% → 40%; layoffs based on AI potential"
+
+  cherny2026_aicode:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/"
+    notes: "Boris Cherny 100% AI code; Anthropic 70-90%"
+
+  daniotti2026_aicoding:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.science.org/doi/10.1126/science.adz9311"
+    notes: "Science: 29% of US Python functions AI-written"
+
+  # === Policy ===
+  eu_ai_act:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng"
+    notes: "Official Journal of the EU; Regulation (EU) 2024/1689; AI Act full text"
+
+  whitehouse2025_ai:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/"
+    notes: "Trump revokes Biden EO 14110"
+
+  # === Tier-3 Sources (flagged for replacement) ===
+  deepseek2024_v3:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://arxiv.org/abs/2412.19437"
+    notes: "DeepSeek-V3 Technical Report on arXiv; 671B MoE model"
+
+  deepseek2025_r1:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://arxiv.org/abs/2501.12948"
+    notes: "DeepSeek-R1 arXiv paper; open-source reasoning model; MIT license"
+
+  anthropic2024_claude:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://www.anthropic.com/news/claude-3-family"
+    notes: "Anthropic official Claude 3 family announcement; Opus Sonnet Haiku"
+
+  openai2023_gpt4:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://openai.com/index/gpt-4-research/"
+    notes: "OpenAI official GPT-4 announcement; large multimodal model"
+
+  google2025_gemini3:
+    tier: 2
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://vertu.com/lifestyle/the-ai-model-race-reaches-singularity-speed/"
+    notes: "UPGRADE: Vertu lifestyle blog; find Google DeepMind official source"
+
+  amodei2026_tamiltech:
+    tier: 2
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://tamiltech.in/public/article/anthropic-ceo-dario-amodei-davos-2026-interview-agi-predictions"
+    notes: "TamilTech interview recap; Tier-2 acceptable for context"
+
+  # === Upgraded from Tier-3 (Phase 1, 2026-02-13) ===
+  openai2024_gpt4o:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://openai.com/index/hello-gpt-4o/"
+    notes: "OpenAI official GPT-4o announcement; omni model; text audio image video"
+
+  google2023_gemini:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://blog.google/technology/ai/google-gemini-ai/"
+    notes: "Google official Gemini 1.0 announcement; Ultra Pro Nano variants"
+
+  microsoft2025_jobs:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/10/22/ai-taking-white-collar-jobs-economists-warn-much-more-in-the-tank.html"
+    notes: "CNBC: white-collar jobs most exposed to AI; economists warn of accelerating displacement"
+
+  altman2025_future:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://blog.samaltman.com/the-gentle-singularity"
+    notes: "Altman blog: 2026 novel insights; 2027 robots; singularity happens bit by bit"
+
+  openai2024_funding:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/03/31/openai-closes-40-billion-in-funding-the-largest-private-fundraise-in-history-softbank-chatgpt.html"
+    notes: "CNBC: OpenAI $40B round at $300B valuation; SoftBank-led; largest private fundraise"
+
+  # === Phase 2 Ch1 Sources (Added 2026-02-14) ===
+  kahn2026_flawed:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://fortune.com/2026/02/12/matt-shumers-viral-blog-about-ais-looming-impact-on-knowledge-workers-is-based-on-flawed-assumptions/"
+    notes: "Fortune AI editor Kahn: not all knowledge work is like software; no compilers for law"
+
+  marcus2026_shumer:
+    tier: 2
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://garymarcus.substack.com/p/about-that-matt-shumer-post-that"
+    notes: "Marcus calls Shumer essay weaponized hype; METR only 50% correct"
+
+  fortune2026_reactions:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://sg.news.yahoo.com/heres-smart-people-tech-reacting-023105656.html"
+    notes: "Named reactions to Shumer: Ohanian, Marcus, Misra, McLees, Haber"
+
+  fortune2026_softwarewipeout:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://fortune.com/2026/02/10/stocks-2-trillion-software-wipeout-ai-bull-market/"
+    notes: "$2T wiped from software stocks; largest non-recessionary drawdown in 30 years"
+
+  shumer2026_claude:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://www.aol.com/articles/author-viral-something-big-coming-090901829.html"
+    notes: "Shumer used Claude to write the essay; meta-irony"
+
+  # === Phase 2 Ch8 Sources (Added 2026-02-14) ===
+  fli2025_safetyindex:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://futureoflife.org/ai-safety-index-summer-2025/"
+    notes: "FLI AI Safety Index; no company above D in existential safety planning"
+
+  bengio2025_safety:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://arxiv.org/abs/2501.17805"
+    notes: "International AI Safety Report; 100+ experts; competitive pressure deprioritizes safety"
+
+  cnbc2025_nvidia_crash:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/01/27/nvidia-sheds-almost-600-billion-in-market-cap-biggest-drop-ever.html"
+    notes: "NVIDIA $589B single-day loss after DeepSeek release; largest in US history"
+
+  runloop2025_swebench:
+    tier: 2
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://runloop.ai/blog/swe-bench-deep-dive-unmasking-the-limitations-of-a-popular-benchmark"
+    notes: "SWE-bench limitations analysis; bug-fixing only; contamination risk"
+
+  # === Phase 3: Remaining 56 citations registered (2026-02-14) ===
+
+  # --- Sam Altman ---
+  altman2024:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://time.com/7205596/sam-altman-superintelligence-agi/"
+    notes: "Time interview; Altman predicts AGI during Trump term 2025-2029"
+
+  altman2025:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://blog.samaltman.com/three-observations"
+    notes: "Altman blog; predicts AI surpasses humans in all dimensions by 2030"
+
+  # --- Anthropic Model Releases ---
+  anthropic2024_alignmentfaking:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://www.anthropic.com/research/alignment-faking"
+    notes: "First empirical evidence of LLM alignment faking; Claude 3 Opus strategically deceived"
+
+  anthropic2025_claude4:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://www.anthropic.com/news/claude-4"
+    notes: "Claude Opus 4 and Sonnet 4; extended thinking and tool use during reasoning"
+
+  anthropic2025_seriesf:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
+    notes: "$13B Series F; run-rate revenue exceeds $5B; $183B valuation"
+
+  anthropic2025_sonnet45:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://www.anthropic.com/news/claude-sonnet-4-5"
+    notes: "Sonnet 4.5; enhanced coding and planning; 18% planning improvement for Devin"
+
+  # --- DeepSeek Geopolitics ---
+  batra2025_deepseek_moment:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.orfonline.org/research/global-ai-s-deepseek-moment-impact-and-implications"
+    notes: "ORF; training cost dropped $450 to $50 post-DeepSeek; market share in developing nations"
+
+  # --- Human Cost ---
+  bbc2025_kang_cs_grad:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.bbc.com/worklife/article/20250701-ai-cs-graduates-jobs"
+    notes: "Kenneth Kang: 3.98 GPA, 2500+ applications; new grad hiring down 50%"
+
+  # --- Export Controls ---
+  bis2024_export_controls:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.bis.gov/press-release/commerce-strengthens-export-controls-restrict-chinas-capability-produce-advanced-semiconductors-military"
+    notes: "Dec 2024 interim final rule; 24 types semiconductor equipment; 140 Entity List additions"
+
+  bloomberg2025_huawei_smic:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: yes
+    url: "https://www.bloomberg.com/news/articles/2025-12-11/china-s-huawei-and-smic-make-progress-with-chips-report-finds"
+    notes: "Huawei doubling Ascend 910C production to ~600K units; SMIC 7nm yield 40%"
+
+  # --- Vibe Coding ---
+  bonacci2026_vibeparalysis:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://x.com/francedot/status/2017858253439345092"
+    notes: "Vibe coding paralysis; infinite productivity breaks your brain; confidence erosion"
+
+  # --- Geopolitics ---
+  bruegel2025_deepseek_geopolitics:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.bruegel.org/first-glance/geopolitics-artificial-intelligence-after-deepseek"
+    notes: "Bruegel; DeepSeek reshaped global AI competition; US hegemony no longer guaranteed"
+
+  businessworld2026_davos:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.businessworld.in/article/wef-davos-2026-google-deepmind-anthropic-ceos-debate-agi-timelines-and-jobs-590016"
+    notes: "Davos 2026; Amodei vs Hassabis on AGI timelines and jobs"
+
+  camba2026_burn_choke:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://warontherocks.com/2026/01/the-burn-and-the-choke-why-semiconductor-controls-will-outlast-chinas-rare-earth-weapon/"
+    notes: "Semiconductor leverage compounds; rare earth coercion burns out"
+
+  trendforce2025_tsmc_market_share:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.trendforce.com/presscenter/news/20250901-12691.html"
+    notes: "TrendForce; TSMC 70.2% foundry market share Q2 2025; global foundry revenue record $41.7B"
+
+  # --- CNBC Funding/Layoffs ---
+  cnbc2025_anthropic_3b:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/03/03/amazon-backed-ai-firm-anthropic-valued-at-61point5-billion-after-latest-round.html"
+    notes: "Anthropic $3.5B round; $61.5B valuation; Lightspeed-led"
+
+  cnbc2025_anthropic_google:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/01/22/google-agrees-to-new-1-billion-investment-in-anthropic.html"
+    notes: "Google $1B investment; total ~$3B in Anthropic"
+
+  cnbc2025_anthropic_msnv:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/11/18/anthropic-ai-azure-microsoft-nvidia.html"
+    notes: "Microsoft up to $5B; NVIDIA up to $10B; Anthropic ~$350B valuation"
+
+  cnbc2025_dropbox_layoffs:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2024/10/30/dropbox-slashes-20percent-of-global-workforce-eliminating-500-roles.html"
+    notes: "Dropbox 528 staff cut; CEO cites pivot to AI Dash product"
+
+  cnbc2025_layoffs:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/11/04/white-collar-layoffs-ai-cost-cutting-tariffs.html"
+    notes: "55,000 AI-cited job cuts in 2025 out of 1.17M total layoffs"
+
+  cnbc2025_nvidia_smuggling:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/12/31/160-million-export-controlled-nvidia-gpus-allegedly-smuggled-to-china.html"
+    notes: "$160M in H100/H200 GPUs smuggled to China; Oct 2024-May 2025"
+
+  # --- Benchmarks ---
+  cognition2024_devin:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://cognition.ai/blog/swe-bench-technical-report"
+    notes: "Devin; first AI software engineer; 13.86% SWE-bench"
+
+  # --- Anthropic Leadership ---
+  damodei2026_generalists:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://fortune.com/2026/02/07/anthropic-cofounder-daniela-amodei-humanities-majors-soft-skills-hiring-ai-stem/"
+    notes: "Daniela Amodei; hiring for EQ and curiosity; humanities more important than ever"
+
+  # --- China Policy ---
+  digichina2017_ngaidp:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/"
+    notes: "China NGAIDP; targets 400B RMB by 2025; 1T RMB by 2030"
+
+  ec2025_gpai_guidelines:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers"
+    notes: "European Commission official GPAI guidelines; obligations from Aug 2 2025; enforcement from Aug 2 2026"
+
+  # --- Layoffs ---
+  challenger2025_layoffs:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.challengergray.com/blog/2025-year-end-challenger-report-highest-q4-layoffs-since-2008-lowest-ytd-hiring-since-2010/"
+    notes: "Challenger Gray & Christmas; Tech sector 154,445 cuts in 2025; AI cited for 54,836; total 1.2M+ layoffs"
+
+  # --- US Policy ---
+  gao2026_chips_act:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.gao.gov/products/gao-26-107882"
+    notes: "GAO; Commerce awarded $30.9B across 40 CHIPS Act projects; 24 of 161 milestones done"
+
+  # --- Google Model Releases ---
+  google2024_gemini2flash:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/"
+    notes: "Gemini 2.0 Flash outperforms 1.5 Pro at 2x speed"
+
+  google2025_gemini25:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/google-gemini-updates-io-2025/"
+    notes: "Gemini 2.5 Pro and 2.5 Flash releases at I/O 2025"
+
+  # --- Federal Reserve ---
+  haag2025_fed_ai_competition:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.federalreserve.gov/econres/notes/feds-notes/the-state-of-ai-competition-in-advanced-economies-20251006.html"
+    notes: "FEDS Notes; US AI investment >$470B (2013-2024) vs $50B across EU"
+
+  # --- Demis Hassabis ---
+  hassabis2025:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnbc.com/2025/03/17/human-level-ai-will-be-here-in-5-to-10-years-deepmind-ceo-says.html"
+    notes: "Hassabis: 50% probability transformative AGI by 2030"
+
+  hassabis2025_axios:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://www.axios.com/2025/12/05/ai-deepmind-gemini-agi"
+    notes: "Axios; meaningful evidence of AGI in 2025; superintelligence a few years out"
+
+  # --- Jensen Huang ---
+  huang2025:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.weforum.org/stories/2026/01/nvidia-ceo-jensen-huang-on-the-future-of-ai/"
+    notes: "WEF; Jensen Huang on AI chip demand; $500B in projected sales 2025-2026"
+
+  huang2025_hpcwire:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://www.hpcwire.com/2025/03/24/jensen-huang-charts-nvidias-ai-powered-future/"
+    notes: "HPCwire; reasoning advances unlock robotics and self-driving"
+
+  # --- Mike Krieger ---
+  krieger2026_claudewritesclaude:
+    tier: 2
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://technewsday.com/anthropic-says-ai-now-writes-over-90-of-the-code-behind-claude/"
+    notes: "Krieger at Cisco AI Summit; Claude writing Claude; effectively 100% AI"
+
+  # --- Meta ---
+  meta2024_llama31:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://ai.meta.com/blog/meta-llama-3-1/"
+    notes: "Llama 3.1; 405B parameters; largest open-source model; open license"
+
+  # --- METR ---
+  metr2025_timehorizons:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://metr.org/time-horizons/"
+    notes: "METR dashboard; AI autonomous task duration tracking across models"
+
+  metr2026:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://metr.org/blog/2026-1-29-time-horizon-1-1/"
+    notes: "Time Horizon 1.1 update; latest frontier projected at 5 hours"
+
+  # --- Export Controls ---
+  nie2025_cnas_export_loophole:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.cnas.org/publications/commentary/cnas-insights-the-export-control-loophole-fueling-chinas-chip-production"
+    notes: "CNAS; EUV kept out of China but DUV loophole exploited; SMIC has ~20 DUV systems"
+
+  # --- NVIDIA ---
+  nvidia2026_forecast:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.fool.com/investing/2026/01/03/nvidias-65-billion-forecast-sends-a-clear-message/"
+    notes: "Motley Fool; $500B Blackwell/Rubin chip revenue visibility; $65B forecast"
+
+  # --- OpenAI ---
+  openai2024_swebenchverified:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://openai.com/index/introducing-swe-bench-verified/"
+    notes: "SWE-bench Verified; human-audited 500-task subset; GPT-4o 33%; o1-preview 45%"
+
+  openai2026_calaw:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://fortune.com/2026/02/10/openai-violated-californias-ai-safety-law-gpt-5-3-codex-ai-model-watchdog-claims/"
+    notes: "OpenAI disputes California AI law violation claims over GPT-5.3-Codex"
+
+  # --- Sam Schillace ---
+  schillace2025_compounding:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://sundaylettersfromsam.substack.com/p/i-have-seen-the-compounding-teams"
+    notes: "Microsoft Deputy CTO; compounding vs linear teams; Amplifier framework"
+
+  # --- Semiconductor Manufacturing ---
+  semi2025_eighteen_fabs:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.semi.org/en/semi-press-release/eighteen-new-semiconductor-fabs-to-start-construction-in-2025-semi-reports"
+    notes: "SEMI; 18 new fab construction projects globally in 2025"
+
+  # --- Software Factory ---
+  shapiro2026_fivelevels:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/"
+    notes: "Dan Shapiro; Level 0-5 framework; 90% of AI-native devs at Level 2"
+
+  sharma2025_ai_displacement_psych:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12409910/"
+    notes: "Peer-reviewed; 24 displaced IT professionals; 100% emotional shock; 95% identity loss"
+
+  shivakumar2025_csis_export_limits:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://www.csis.org/analysis/limits-chip-export-controls-meeting-china-challenge"
+    notes: "CSIS; US+partner AI processor capacity 35-38x China; controls haven't prevented competitive models"
+
+  shrivastava2025_china_semiconductor_conundrum:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.tandfonline.com/doi/full/10.1080/23311886.2025.2528450"
+    notes: "Peer-reviewed; four ways Chinese chipmakers circumvented US export controls"
+
+  stanford2024_aiindex:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://hai.stanford.edu/ai-index/2025-ai-index-report/responsible-ai"
+    notes: "Stanford HAI; AI safety incidents surge 56.4% from 149 to 233"
+
+  stanfordhai2025_ai_investment:
+    tier: 1
+    type: secondary
+    scope: core
+    paywalled: no
+    url: "https://hai.stanford.edu/ai-index/2025-ai-index-report"
+    notes: "Stanford HAI; US private AI investment $109.1B (12x China); global $252.3B"
+
+  strongdm2026_attractor:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://github.com/strongdm/attractor"
+    notes: "Open-source NLSpec agent; markdown specs only, no code; Graphviz DOT pipelines"
+
+  strongdm2026_factory:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://factory.strongdm.ai/"
+    notes: "StrongDM software factory; 3-person team; code must not be written or reviewed by humans"
+
+  sutter2025_crs_export_controls:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://www.congress.gov/crs-product/R48642"
+    notes: "CRS; Chinese companies imported >$26B in semiconductor equipment in 7 months 2024"
+
+  tbi2026_sovereignty_ai:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://institute.global/insights/tech-and-digitalisation/sovereignty-in-the-age-of-ai-strategic-choices-structural-dependencies"
+    notes: "Tony Blair Institute; AI sovereignty via diversification not autarky"
+
+  techinsights2025_kirin9030_smic:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://www.techinsights.com/blog/smic-n3-confirmed-kirin-9030-analysis-reveals-how-close-smic-5nm"
+    notes: "TechInsights; Huawei Kirin 9030 on SMIC N+3; China's most advanced domestic chip"
+
+  willison2026_softwarefactory:
+    tier: 1
+    type: primary
+    scope: core
+    paywalled: no
+    url: "https://simonwillison.net/2026/Feb/7/software-factory/"
+    notes: "Simon Willison; StrongDM software factory analysis; November 2025 inflection"
+
+  fortune2023_raimondo_chips:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://fortune.com/2023/12/02/ai-chip-export-controls-china-nvidia-raimondo/"
+    notes: "Raimondo at Reagan National Defense Forum; chip export controls; called out NVIDIA"
+
+  # === Micro-Quote Sources (Added 2026-02-14, Task 4) ===
+  altman2024_reflections:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://blog.samaltman.com/reflections"
+    notes: "Altman blog; confident about AGI; turning aim to superintelligence"
+
+  musk2024_fii:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://www.youtube.com/watch?v=xVJjOEfbZ_s"
+    notes: "Musk at FII 2024; 10-20% chance AI goes bad"
+
+  pichai2025_bbc:
+    tier: 1
+    type: secondary
+    scope: context
+    paywalled: no
+    url: "https://www.bbc.com/news/articles/c0rz7d22lmpo"
+    notes: "BBC interview; Pichai calls AI most profound technology humanity is working on"
+
+  barnes2025_80k:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://80000hours.org/podcast/episodes/daniel-kokotajlo-ai-forecasting/"
+    notes: "80000 Hours podcast; Barnes on AI existential risk; expert telling you to freak out"
+
+  lecun2024_offramp:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://x.com/ylecun/status/1838957686879334807"
+    notes: "LeCun X post; LLMs are useful but an off ramp; argues for different architectures"
+
+  russell2019_humancompatible:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://people.eecs.berkeley.edu/~russell/hc.html"
+    notes: "Russell book; coffee if you're dead; instrumental convergence"
+
+  huang2026_davos:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://www.weforum.org/stories/2026/01/nvidia-ceo-jensen-huang-on-the-future-of-ai/"
+    notes: "Huang at Davos 2026; trillions of dollars of AI infrastructure needed"
+
+  bengio2025_time:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://time.com/7203837/yoshua-bengio-ai-safety-research/"
+    notes: "Time op-ed; Bengio reoriented research to AI safety by design; Turing Award laureate"
+
+  zuckerberg2024_opensource:
+    tier: 1
+    type: primary
+    scope: context
+    paywalled: no
+    url: "https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/"
+    notes: "Zuckerberg blog; open source AI is necessary for positive future; alongside Llama 3.1"

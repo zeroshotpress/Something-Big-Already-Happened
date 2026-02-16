@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.43">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-02-12">
+<meta name="description" content="A three-person team declared that code must not be written or reviewed by humans. Their manifesto — and the framework behind it — may represent the future of software development.">
+
+<title>9&nbsp; The Software Factory – Something Big Already Happened</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/10-compounding-teams.html" rel="next">
+<link href="../chapters/08-november-revolution.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dd7be1b65fbd8a0e56379a01f75a5202.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0cd002fe4c2a8524992fa81d2792e533.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3937d65ec731be4c3f5d1698a8cd2adb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark-7f112728eb3da13021bc0723d7d15c52.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../styles/theme.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/print.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/07-recursive-loop.html">Part III: The Inflection</a></li><li class="breadcrumb-item"><a href="../chapters/09-software-factory.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The Software Factory</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Something Big Already Happened</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/zeroshotpress/Something-Big-Already-Happened" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: The Predictions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-the-prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Something Big Is Happening</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-voices-of-warning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Chorus of Warnings</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: The Evidence</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-benchmark-revolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Benchmark Revolution</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-autonomous-frontier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Autonomous Frontier</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-model-avalanche.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Model Avalanche</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-human-cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Human Cost</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III: The Inflection</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-recursive-loop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Recursive Loop</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-november-revolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The November Revolution</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-software-factory.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The Software Factory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-compounding-teams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Compounding Teams</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV: The Broader Impact</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-investment-tsunami.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Investment Tsunami</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-geopolitical-chessboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Geopolitical Chessboard</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V: What Comes Next</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-science-acceleration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">The Science Acceleration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-what-now.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What Now?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-five-levels" id="toc-the-five-levels" class="nav-link active" data-scroll-target="#the-five-levels"><span class="header-section-number">9.1</span> The Five Levels</a></li>
+  <li><a href="#strongdm-the-proof-of-concept" id="toc-strongdm-the-proof-of-concept" class="nav-link" data-scroll-target="#strongdm-the-proof-of-concept"><span class="header-section-number">9.2</span> StrongDM: The Proof of Concept</a></li>
+  <li><a href="#the-attractor" id="toc-the-attractor" class="nav-link" data-scroll-target="#the-attractor"><span class="header-section-number">9.3</span> The Attractor</a></li>
+  <li><a href="#scenario-based-testing-and-the-verification-problem" id="toc-scenario-based-testing-and-the-verification-problem" class="nav-link" data-scroll-target="#scenario-based-testing-and-the-verification-problem"><span class="header-section-number">9.4</span> Scenario-Based Testing and the Verification Problem</a></li>
+  <li><a href="#the-architecture-of-trust" id="toc-the-architecture-of-trust" class="nav-link" data-scroll-target="#the-architecture-of-trust"><span class="header-section-number">9.5</span> The Architecture of Trust</a></li>
+  <li><a href="#the-catalyst-october-2024" id="toc-the-catalyst-october-2024" class="nav-link" data-scroll-target="#the-catalyst-october-2024"><span class="header-section-number">9.6</span> The Catalyst: October 2024</a></li>
+  <li><a href="#who-is-actually-at-level-5" id="toc-who-is-actually-at-level-5" class="nav-link" data-scroll-target="#who-is-actually-at-level-5"><span class="header-section-number">9.7</span> Who Is Actually at Level 5?</a></li>
+  <li><a href="#the-shifting-definition-of-developer" id="toc-the-shifting-definition-of-developer" class="nav-link" data-scroll-target="#the-shifting-definition-of-developer"><span class="header-section-number">9.8</span> The Shifting Definition of “Developer”</a></li>
+  <li><a href="#the-consequential-question" id="toc-the-consequential-question" class="nav-link" data-scroll-target="#the-consequential-question"><span class="header-section-number">9.9</span> The Consequential Question</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/zeroshotpress/Something-Big-Already-Happened/edit/main/chapters/09-software-factory.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/zeroshotpress/Something-Big-Already-Happened/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/07-recursive-loop.html">Part III: The Inflection</a></li><li class="breadcrumb-item"><a href="../chapters/09-software-factory.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The Software Factory</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-software-factory" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The Software Factory</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 12, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>“Code must not be written by humans. Code must not be reviewed by humans.”</p>
+<p>The words appeared on factory.strongdm.ai, the public manifesto of a three-person team that had set out to answer a question the rest of the industry was still learning to ask: what does software development look like when humans no longer touch the code? <span class="citation" data-cites="strongdm2026_factory">(<a href="#ref-strongdm2026_factory" role="doc-biblioref">McCarthy et al. 2025</a>)</span></p>
+<p>The statement was not a prediction. It was a policy. Justin McCarthy, co-founder and CTO of StrongDM, along with Jay Taylor and Navan Chauhan, had founded their software factory on July 14, 2025, with a set of principles that most engineering organizations would consider heretical. No human writes code. No human reviews code. The test of the system is not whether the code looks correct to a human reader. The test is whether the system can prove that it works.</p>
+<p>By the time Simon Willison — one of the most respected voices in the software development community — published his analysis of the StrongDM approach on February 7, 2026, he identified the no-human-review principle as “the most interesting of these, without a doubt” <span class="citation" data-cites="willison2026_softwarefactory">(<a href="#ref-willison2026_softwarefactory" role="doc-biblioref">Willison 2026</a>)</span>. And he posed the question that would come to define the next era of software engineering: “how can you prove that software you are producing works if both the implementation and the tests are being written for you by coding agents?” He called it “the most consequential question in software development right now” <span class="citation" data-cites="willison2026_softwarefactory">(<a href="#ref-willison2026_softwarefactory" role="doc-biblioref">Willison 2026</a>)</span>.</p>
+<p>This chapter examines the emerging architecture of what Dan Shapiro, CEO of Glowforge, called “the Dark Factory” — Level 5 of a framework that maps the progression from AI as a typing assistant to AI as a fully autonomous software production system <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>. It traces the path from where most developers are today (Level 2, by Shapiro’s reckoning) to where StrongDM claims to be operating (Level 5), and asks whether the gap between those levels is a matter of time or a matter of trust.</p>
+<section id="the-five-levels" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="the-five-levels"><span class="header-section-number">9.1</span> The Five Levels</h2>
+<p>In January 2026, Dan Shapiro published “The Five Levels: from Spicy Autocomplete to the Dark Factory,” a framework that gave the industry a shared vocabulary for describing the rapidly shifting relationship between human developers and AI coding tools <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>. The framework drew an explicit analogy to autonomous driving levels, mapping the progression from full human control to full machine autonomy.</p>
+<p><strong>Level 0: Spicy Autocomplete.</strong> “Level Zero is your parents’ Volvo, maybe with an automatic transmission. Whether it’s vi or Visual Studio, not a character hits the disk without your approval. You might use AI as a search engine on steroids or occasionally hit tab to accept a suggestion, but the code is unmistakably yours” <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>. At this level, AI is a convenience, not a collaborator. The developer writes the code, makes all architectural decisions, and uses AI only for occasional lookups or completions. The developer’s mental model of the system is complete and unquestioned.</p>
+<p><strong>Level 1: The Coding Intern.</strong> “At Level 1, you’ve got lanekeeping and cruise control. You’re writing the important stuff, but you offload specific, discrete tasks to your AI intern” <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>. The developer delegates bounded tasks — writing a unit test, generating a boilerplate function, translating code between languages — while maintaining full understanding and control of the overall system. The AI handles the tedious parts; the human handles the thinking.</p>
+<p><strong>Level 2: The Junior Developer.</strong> “At Level 2, you’ve got Autopilot on the highway. You’ve got a junior buddy to hand off all your boring stuff to. This is where 90% of ‘AI-native’ developers are living right now” <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>. This is the level at which AI begins to alter the developer’s workflow in structural ways. Instead of writing code and having the AI help, the developer starts describing what they want and having the AI write it. The developer still reviews every output, still understands the codebase, and still makes all design decisions. But the act of typing code — the physical craft of programming — begins to shift from the human to the machine.</p>
+<p>The observation that 90% of AI-native developers are at Level 2 is perhaps the most important number in Shapiro’s framework. It means that for the vast majority of developers who consider themselves sophisticated AI users, the AI is still fundamentally an assistant. It has not changed the structure of their work. It has changed the speed.</p>
+<p><strong>Level 3: The Developer (Human as Manager).</strong> “Level 3 is a Waymo with a safety driver. You’re not a senior developer anymore; that’s your AI’s job. You are… a manager. You are the human in the loop” <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>. At this level, the developer’s role shifts from writing code to directing the AI that writes code. The developer specifies requirements, reviews outputs, and makes architectural decisions, but does not personally write implementation code. The AI is not an assistant; it is the developer. The human is the manager.</p>
+<p>This is the level at which the cognitive demands of the work change qualitatively. A developer at Level 3 needs different skills than a developer at Level 2. They need the ability to specify requirements precisely, to evaluate AI-generated code for correctness and quality, and to maintain a mental model of a system they did not build line by line. Some developers find this transition natural; others find it deeply uncomfortable.</p>
+<p><strong>Level 4: The Engineering Team.</strong> “More of an engineering manager or product/program/project manager. You collaborate on specs and plans, the agents do the work” <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>. At Level 4, the human’s role shifts further from technical evaluation to strategic direction. The human defines what should be built and why, negotiates priorities, and evaluates whether the delivered product meets business requirements. The technical work — architecture, implementation, testing, deployment — is handled by AI agents working in coordination.</p>
+<p><strong>Level 5: The Dark Software Factory.</strong> “Like a factory run by robots where the lights are out because robots don’t need to see” <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>. At Level 5, “it’s not really a car any more… your software process isn’t really a software process any more. It’s a black box that turns specs into software” <span class="citation" data-cites="shapiro2026_fivelevels">(<a href="#ref-shapiro2026_fivelevels" role="doc-biblioref">Shapiro 2026</a>)</span>.</p>
+<p><a href="#fig-five-levels" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> maps the progression from full human control to full machine autonomy.</p>
+<div id="fig-five-levels" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-five-levels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/generated/five-levels.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-five-levels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Dan Shapiro’s Five Levels of AI-assisted software development
+</figcaption>
+</figure>
+</div>
+<p>Willison’s characterization of Level 5 teams was stark: “Nobody reviews AI-produced code, ever. They don’t even look at it.” The organizing principle of Level 5 is that “the goal of the system is to prove that the system works” <span class="citation" data-cites="willison2026_softwarefactory">(<a href="#ref-willison2026_softwarefactory" role="doc-biblioref">Willison 2026</a>)</span>. The teams operating at this level consist of experienced developers, but their focus is not on the code itself. It is on system design, specification quality, and demonstrating that the AI-driven process produces correct results.</p>
+<p>The gap between Level 2, where most developers live, and Level 5, where StrongDM claims to operate, is not merely a gap of tooling. It is a gap of philosophy. At Level 2, the developer is still the author. At Level 5, the developer is the architect of a process that produces software without human authorship. The difference is less like upgrading a car and more like replacing driving with teleportation.</p>
+</section>
+<section id="strongdm-the-proof-of-concept" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="strongdm-the-proof-of-concept"><span class="header-section-number">9.2</span> StrongDM: The Proof of Concept</h2>
+<p>The StrongDM software factory was not an abstraction. It was a working system, built by three people, that produced production software without human code authorship or review.</p>
+<p>The team was small by design. Justin McCarthy, co-founder and CTO of StrongDM, had been thinking about AI-driven software development since before the current generation of models made it practical. When he founded the software factory on July 14, 2025, he brought Jay Taylor and Navan Chauhan — a team of three, operating with principles that most engineering organizations of any size would consider reckless <span class="citation" data-cites="strongdm2026_factory">(<a href="#ref-strongdm2026_factory" role="doc-biblioref">McCarthy et al. 2025</a>)</span>.</p>
+<p>Their investment in AI tooling was correspondingly aggressive. “If you haven’t spent at least $1,000 on tokens today per human engineer, your software factory has room for improvement,” the StrongDM manifesto stated <span class="citation" data-cites="strongdm2026_factory">(<a href="#ref-strongdm2026_factory" role="doc-biblioref">McCarthy et al. 2025</a>)</span>. This was not a figure of speech. At $1,000 per engineer per day, the team was spending roughly $66,000 per month on AI tokens alone — a sum that would have been inconceivable for a three-person team in any prior era of software development, but that StrongDM considered a bargain compared to the cost of additional human engineers.</p>
+<p>The key technical innovation was the Digital Twin Universe (DTU): “behavioral clones of the third-party services our software depends on” <span class="citation" data-cites="strongdm2026_factory">(<a href="#ref-strongdm2026_factory" role="doc-biblioref">McCarthy et al. 2025</a>)</span>. StrongDM’s product integrated with external services — Okta for identity management, Jira for project tracking, Slack for communication, Google Docs and Drive and Sheets for document management. Testing against these live services was expensive, slow, and fragile. Rate limits, abuse detection, and API costs all constrained how aggressively the team could test.</p>
+<p>The DTU eliminated these constraints. By creating behavioral clones of each external service — clones that replicated the API behavior, error conditions, and edge cases of the real services — the team could run “thousands of scenarios per hour without hitting rate limits, triggering abuse detection, or accumulating API costs” <span class="citation" data-cites="strongdm2026_factory">(<a href="#ref-strongdm2026_factory" role="doc-biblioref">McCarthy et al. 2025</a>)</span>. The clones were not simple mocks. They were detailed behavioral models, designed to reproduce the quirks and failure modes of the real services with enough fidelity that code tested against the DTU would work correctly against the production services.</p>
+<p>The DTU was the foundation that made the no-review policy viable. If you cannot read the code — and StrongDM’s principles said you must not — then you need another way to establish confidence that it works. The DTU provided that confidence through exhaustive scenario-based testing, running the software through thousands of realistic usage patterns and verifying that it behaved correctly in each one.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Economics of the Software Factory
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>StrongDM’s $1,000-per-day-per-engineer token budget inverts traditional software economics. A senior software engineer in the Bay Area costs $200,000–$400,000 per year in total compensation. At $1,000 per day ($260,000 per year), StrongDM’s AI token spend per engineer roughly matches the cost of an additional human. But the AI does not need health insurance, does not take vacations, does not have context-switching costs, and can work around the clock. If the three-person team plus AI tokens produces the output of a fifteen-person team, the economics are compelling. If it produces the output of a thirty-person team, the economics are transformative.</p>
+</div>
+</div>
+</section>
+<section id="the-attractor" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="the-attractor"><span class="header-section-number">9.3</span> The Attractor</h2>
+<p>At the center of StrongDM’s software factory was Attractor: a non-interactive coding agent that composed models, prompts, and tools into a graph-structured pipeline <span class="citation" data-cites="strongdm2026_attractor">(<a href="#ref-strongdm2026_attractor" role="doc-biblioref">StrongDM 2026</a>)</span>. Where most AI coding tools were designed as interactive assistants — waiting for human input, responding to prompts, requiring approval at each step — Attractor was designed to operate end-to-end once the work was fully specified.</p>
+<p>The tool’s architecture reflected the Level 5 philosophy. Pipeline authors defined multi-stage AI workflows as directed graphs using Graphviz DOT syntax, specifying the sequence of operations, the models and tools involved at each stage, and the data flowing between them. The result was a declarative specification of the software development process itself — a meta-program that described how to produce programs.</p>
+<p>The most striking feature of the Attractor GitHub repository (github.com/strongdm/attractor) was that it contained no code. It consisted of three markdown specification files <span class="citation" data-cites="strongdm2026_attractor">(<a href="#ref-strongdm2026_attractor" role="doc-biblioref">StrongDM 2026</a>)</span>. The specifications served as the source of truth: feed them into your coding agent, and the agent would build its own implementation of the Attractor pipeline. The tool was, in other words, a specification that created its own implementation — a practical demonstration of the Level 5 principle that specs become software.</p>
+</section>
+<section id="scenario-based-testing-and-the-verification-problem" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="scenario-based-testing-and-the-verification-problem"><span class="header-section-number">9.4</span> Scenario-Based Testing and the Verification Problem</h2>
+<p>The no-review policy raised a problem that Willison identified as existential: “how can you prove that software you are producing works if both the implementation and the tests are being written for you by coding agents?” <span class="citation" data-cites="willison2026_softwarefactory">(<a href="#ref-willison2026_softwarefactory" role="doc-biblioref">Willison 2026</a>)</span></p>
+<p>This is not a hypothetical concern. The entire edifice of software quality assurance rests on the assumption that the person writing the tests is independent of the person writing the code. When a human developer writes a function and a separate human tester writes the test, the independence between them provides a check: if the developer misunderstands the requirement, the tester will catch the discrepancy. If the developer makes a systematic error, the tester’s different perspective will expose it.</p>
+<p>When AI writes both the implementation and the tests, this independence vanishes. An AI system that misunderstands a requirement will misunderstand it consistently, producing implementation code and test code that agree with each other while both being wrong. The tests will pass. The system will appear correct. And the error will remain hidden until it manifests in production.</p>
+<p>StrongDM’s answer to this problem was built on three pillars.</p>
+<p><strong>Scenario-based testing.</strong> Instead of traditional unit and integration tests, StrongDM organized its quality assurance around “scenarios” — end-to-end user stories that represented complete workflows. A scenario might describe a user logging into the system via Okta, creating a Jira ticket, sharing a document via Google Drive, and receiving a notification in Slack. The scenario was not a test in the traditional sense; it was a description of expected behavior, “often stored outside the codebase (similar to a ‘holdout’ set in model training)” <span class="citation" data-cites="strongdm2026_factory">(<a href="#ref-strongdm2026_factory" role="doc-biblioref">McCarthy et al. 2025</a>)</span>.</p>
+<p>The holdout analogy was deliberate and revealing. In machine learning, a holdout set is data that the model never sees during training, used to evaluate whether the model has learned generalizable patterns or merely memorized its training data. By storing scenarios outside the codebase, StrongDM created a similar separation: the AI that produced the code never saw the scenarios used to evaluate it, reducing the risk that the tests and the implementation would share the same systematic errors.</p>
+<p><strong>Probabilistic satisfaction.</strong> StrongDM moved away from the boolean pass/fail model of traditional testing. Instead, they defined a metric called “satisfaction” — “the fraction of observed trajectories likely satisfying user requirements” <span class="citation" data-cites="strongdm2026_factory">(<a href="#ref-strongdm2026_factory" role="doc-biblioref">McCarthy et al. 2025</a>)</span>. A scenario was not simply “passed” or “failed”; it was evaluated across multiple runs, with the fraction of successful trajectories providing a probabilistic measure of correctness.</p>
+<p>This approach acknowledged a reality that traditional testing often obscures: software correctness is not binary in practice. A function that works correctly 999 times out of 1,000 is more useful than a function that fails deterministically on its first call, even though both would “fail” a traditional test. By measuring satisfaction probabilistically, StrongDM could make nuanced assessments of software quality that better reflected real-world performance.</p>
+<p><strong>The Digital Twin Universe.</strong> The DTU, described above, provided the environment in which scenarios were executed. By running scenarios against behavioral clones of external services, the team could test at a scale and speed that would be impossible against production services. Thousands of scenario executions per hour generated enough data to make the probabilistic satisfaction metric statistically meaningful.</p>
+</section>
+<section id="the-architecture-of-trust" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="the-architecture-of-trust"><span class="header-section-number">9.5</span> The Architecture of Trust</h2>
+<p>The deeper question beneath Willison’s formulation is not technical but philosophical: how do you trust code that no human has read?</p>
+<p>Traditional software engineering is built on a foundation of human comprehension. Code review exists not only to catch bugs but to ensure that at least two humans understand every line of production code. Documentation exists to make code comprehensible to future humans. Architecture decisions are discussed in design reviews so that the reasoning behind them is preserved in human memory and institutional knowledge.</p>
+<p>The software factory model abandons all of this. No human reads the code. No human reviews the architecture. No human documents the reasoning. The system produces software, and the software either satisfies its scenarios or it does not.</p>
+<p>StrongDM’s answer is that trust should be empirical rather than interpretive. You trust the code not because you have read it and judged it correct, but because you have tested it exhaustively and observed it behaving correctly across thousands of scenarios. This is the same epistemological shift that occurred in machine learning itself: we trust a neural network not because we understand its internal representations, but because it performs correctly on held-out test data.</p>
+<p>The analogy is imperfect. A neural network’s internal representations are genuinely opaque — no human could read the millions of parameters and understand what the network has learned. Source code, by contrast, is designed to be human-readable. The choice not to read it is a policy decision, not a technical necessity. StrongDM argues that the policy is justified by efficiency: reading code takes time, human review catches only a fraction of bugs, and automated testing can cover more scenarios more reliably than any human reviewer.</p>
+<p><a href="#fig-software-factory-arch" class="quarto-xref">Figure&nbsp;<span>9.2</span></a> illustrates the architecture of this trust-based system — from specification through automated verification.</p>
+<div id="fig-software-factory-arch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-software-factory-arch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/diagrams/software-factory-architecture.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-software-factory-arch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: The software factory architecture
+</figcaption>
+</figure>
+</div>
+<p>Critics counter that human review serves functions beyond bug-catching. It builds institutional knowledge. It trains junior developers. It creates a shared understanding of the system that enables effective debugging when things go wrong in ways that no scenario anticipated. A system that no human understands is a system that no human can fix when it breaks in novel ways.</p>
+<p>This debate is not yet resolved, and it may not be resolvable in the abstract. The answer may depend on the specific domain, the specific failure modes, and the specific cost of getting it wrong. A software factory producing internal tooling for a three-person team has a very different risk profile than one producing medical device firmware or financial trading systems.</p>
+</section>
+<section id="the-catalyst-october-2024" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="the-catalyst-october-2024"><span class="header-section-number">9.6</span> The Catalyst: October 2024</h2>
+<p>The software factory was not built on the models of November 2025. Its foundations were laid earlier, in a moment that Willison and the StrongDM team both identified as the critical inflection: the second revision of Claude 3.5 Sonnet in October 2024.</p>
+<p>Before that revision, Willison observed, “long-horizon agentic coding workflows began to compound correctness rather than error” <span class="citation" data-cites="willison2026_softwarefactory">(<a href="#ref-willison2026_softwarefactory" role="doc-biblioref">Willison 2026</a>)</span>. This is a precise technical observation with profound practical implications. In a coding workflow where each step builds on the previous one, errors compound. If the model makes a mistake in step 3 of a 20-step task, every subsequent step is built on a flawed foundation. Before October 2024, this compounding error made long autonomous coding sessions impractical. The model might get the first few steps right, but by step 10 or 15, the accumulated errors had overwhelmed the output.</p>
+<p>The October 2024 revision changed this dynamic. The model became better at maintaining consistency across long sequences of actions, catching its own errors before they propagated, and using earlier correct steps as reliable context for later ones. By December 2024, Willison noted, “the model’s long-horizon coding performance was unmistakable via Cursor’s YOLO mode” — a feature that allowed the AI to make code changes without requesting human approval at each step <span class="citation" data-cites="willison2026_softwarefactory">(<a href="#ref-willison2026_softwarefactory" role="doc-biblioref">Willison 2026</a>)</span>.</p>
+<p>This was the enabling technology that made the software factory conceivable. If models compound errors over long sequences, autonomous software production is impossible. If models compound correctness, it becomes practical. The October 2024 revision was the inflection point between these two regimes, and the November 2025 models (as examined in <a href="08-november-revolution.html" class="quarto-xref"><span>Chapter 8</span></a>) dramatically extended the range over which correctness compounded.</p>
+</section>
+<section id="who-is-actually-at-level-5" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="who-is-actually-at-level-5"><span class="header-section-number">9.7</span> Who Is Actually at Level 5?</h2>
+<p>The honest answer: very few teams.</p>
+<p>StrongDM is the most public and most documented example of a team operating at Level 5. Their willingness to publish their principles, open-source their specifications, and invite scrutiny from analysts like Willison makes them the case study that the rest of the industry points to. But they are a three-person team building a specific category of software (security infrastructure tooling) with a specific risk profile. Generalizing from their experience to the broader industry requires caution.</p>
+<p>Shapiro’s observation that 90% of AI-native developers are at Level 2 suggests that the gap between the frontier and the mainstream remains enormous. Most developers who consider themselves AI-savvy are still writing code, still reviewing every AI output, and still maintaining a personal understanding of their codebase. They are using AI to go faster, not to restructure the fundamental relationship between human and code.</p>
+<p>The teams operating at Level 3 and Level 4 — the levels where the human shifts from developer to manager — are more numerous but harder to count, because they rarely publicize their practices. Some of the compounding teams described in <a href="10-compounding-teams.html" class="quarto-xref"><span>Chapter 10</span></a> are operating at these levels, building internal frameworks around AI models and treating the AI as the developer rather than the assistant. But the transition from Level 2 to Level 3 is not just a matter of better tools. It is a matter of trust, organizational culture, and individual psychology.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Level 5 Caveat
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is worth noting what Level 5 requires that most organizations lack: a comprehensive scenario-based testing framework, behavioral clones of all external dependencies, a probabilistic quality metric, and — perhaps most importantly — a team of experienced developers who are confident enough in their system design skills to never look at the code their system produces. Level 5 is not a destination that any team can reach simply by upgrading their AI tools. It requires a ground-up rethinking of how software quality is defined and measured.</p>
+</div>
+</div>
+</section>
+<section id="the-shifting-definition-of-developer" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="the-shifting-definition-of-developer"><span class="header-section-number">9.8</span> The Shifting Definition of “Developer”</h2>
+<p>The five-level framework illuminates a question that the industry has been circling for months: what does it mean to be a software developer in an era when AI writes the code?</p>
+<p>At Level 0 through Level 2, the answer is familiar. A developer writes code, understands systems, and uses AI to accelerate the mechanical aspects of the work. The core identity — the part that answers “what do you do?” at a dinner party — is unchanged.</p>
+<p>At Level 3 and above, the answer becomes genuinely uncertain. A person who specifies requirements, evaluates AI-generated outputs, and manages AI agents is doing important, skilled work. But is that person a “developer”? Or are they a product manager, a systems architect, a quality engineer? The distinction is not merely semantic. It affects hiring criteria, compensation structures, educational curricula, and professional identity.</p>
+<p>Daniela Amodei, co-founder of Anthropic, gestured toward this shift in her February 2026 comments about hiring priorities. As she described in the interview examined in <a href="02-voices-of-warning.html" class="quarto-xref"><span>Chapter 2</span></a>, Anthropic now hired primarily for communication, emotional intelligence, and curiosity rather than raw technical skill — and she argued that humanities education would become more important, not less, in an AI-driven world <span class="citation" data-cites="damodei2026_generalists">(<a href="#ref-damodei2026_generalists" role="doc-biblioref">Amodei 2026</a>)</span>.</p>
+<p>This is not what a technology company’s co-founder would have said five years ago. The shift from hiring for technical skills to hiring for communication, emotional intelligence, and broad intellectual curiosity reflects a recognition that the nature of the work is changing. When AI writes the code, the scarce human contributions are judgment, taste, empathy, and the ability to understand what users actually need — qualities that the humanities cultivate more directly than a computer science curriculum.</p>
+<p>The software factory model takes this logic to its extreme. In a Level 5 organization, there is no code to write and no code to review. The human contributions are specification (saying precisely what should be built), system design (creating the architectural framework within which the AI operates), and validation (confirming that the output meets requirements). These are cognitive and communicative tasks, not technical ones in the traditional sense.</p>
+</section>
+<section id="the-consequential-question" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="the-consequential-question"><span class="header-section-number">9.9</span> The Consequential Question</h2>
+<p>Willison’s question — how do you prove that software works when both the implementation and the tests are AI-generated? — does not yet have a definitive answer. StrongDM’s approach of scenario-based testing with holdout sets and probabilistic satisfaction is the most developed response, but it remains unproven at scale and in high-stakes domains.</p>
+<p>The question is consequential because it sits at the intersection of two powerful forces. On one side, the economic incentive to adopt AI-driven software development is overwhelming. The cost savings, speed improvements, and competitive advantages are too large to ignore, particularly for startups and small teams that cannot afford large engineering organizations. On the other side, the reliability requirements of many software domains — healthcare, finance, transportation, infrastructure — are non-negotiable. A software factory that produces code no human has reviewed might be acceptable for internal tooling. It is not acceptable for the software controlling a nuclear power plant.</p>
+<p>The resolution of this tension will likely determine the pace and scope of AI adoption in software development over the coming years. If scenario-based testing and probabilistic quality metrics prove reliable enough for high-stakes domains, the shift to Level 4 and Level 5 development will accelerate rapidly. If they do not — if the verification problem proves intractable without human review — then the adoption curve will plateau at Level 2 or Level 3, and the software factory will remain a niche approach for specific categories of work.</p>
+<p>Either way, the question itself has been posed. The old model — human writes code, human reviews code, human maintains code — is no longer the only model. The software factory exists. It works, at least for its creators. And the rest of the industry is watching to see whether the principles that StrongDM articulated in July 2025 will become the standard practices of 2027.</p>
+<p>The lights are out. The robots are working. And Simon Willison’s question hangs in the air, unanswered.</p>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-damodei2026_generalists" class="csl-entry" role="listitem">
+Amodei, Daniela. 2026. <span>“<span>Anthropic</span> Cofounder Says Studying the Humanities Will Be <span>‘More Important Than Ever’</span>.”</span> Fortune, February 7. <a href="https://fortune.com/2026/02/07/anthropic-cofounder-daniela-amodei-humanities-majors-soft-skills-hiring-ai-stem/">https://fortune.com/2026/02/07/anthropic-cofounder-daniela-amodei-humanities-majors-soft-skills-hiring-ai-stem/</a>.
+</div>
+<div id="ref-strongdm2026_factory" class="csl-entry" role="listitem">
+McCarthy, Justin, Jay Taylor, and Navan Chauhan. 2025. <span>“<span>StrongDM</span> Software Factory.”</span> <a href="https://factory.strongdm.ai/">https://factory.strongdm.ai/</a>.
+</div>
+<div id="ref-shapiro2026_fivelevels" class="csl-entry" role="listitem">
+Shapiro, Dan. 2026. <span>“The Five Levels: From Spicy Autocomplete to the Dark Factory.”</span> January. <a href="https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/">https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/</a>.
+</div>
+<div id="ref-strongdm2026_attractor" class="csl-entry" role="listitem">
+StrongDM. 2026. <span>“Attractor: Non-Interactive Coding Agent for Software Factories.”</span> <a href="https://github.com/strongdm/attractor">https://github.com/strongdm/attractor</a>.
+</div>
+<div id="ref-willison2026_softwarefactory" class="csl-entry" role="listitem">
+Willison, Simon. 2026. <span>“How <span>StrongDM</span>’s <span>AI</span> Team Build Serious Software Without Even Looking at the Code.”</span> February 7. <a href="https://simonwillison.net/2026/Feb/7/software-factory/">https://simonwillison.net/2026/Feb/7/software-factory/</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/08-november-revolution.html" class="pagination-link" aria-label="The November Revolution">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The November Revolution</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/10-compounding-teams.html" class="pagination-link" aria-label="The Compounding Teams">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Compounding Teams</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "A three-person team declared that code must not be written or reviewed by humans. Their manifesto --- and the framework behind it --- may represent the future of software development."</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-02-12</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Software Factory {#sec-software-factory}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>"Code must not be written by humans. Code must not be reviewed by humans."</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>The words appeared on factory.strongdm.ai, the public manifesto of a three-person team that had set out to answer a question the rest of the industry was still learning to ask: what does software development look like when humans no longer touch the code? <span class="co">[</span><span class="ot">@strongdm2026_factory</span><span class="co">]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>The statement was not a prediction. It was a policy. Justin McCarthy, co-founder and CTO of StrongDM, along with Jay Taylor and Navan Chauhan, had founded their software factory on July 14, 2025, with a set of principles that most engineering organizations would consider heretical. No human writes code. No human reviews code. The test of the system is not whether the code looks correct to a human reader. The test is whether the system can prove that it works.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>By the time Simon Willison --- one of the most respected voices in the software development community --- published his analysis of the StrongDM approach on February 7, 2026, he identified the no-human-review principle as "the most interesting of these, without a doubt" <span class="co">[</span><span class="ot">@willison2026_softwarefactory</span><span class="co">]</span>. And he posed the question that would come to define the next era of software engineering: "how can you prove that software you are producing works if both the implementation and the tests are being written for you by coding agents?" He called it "the most consequential question in software development right now" <span class="co">[</span><span class="ot">@willison2026_softwarefactory</span><span class="co">]</span>.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>This chapter examines the emerging architecture of what Dan Shapiro, CEO of Glowforge, called "the Dark Factory" --- Level 5 of a framework that maps the progression from AI as a typing assistant to AI as a fully autonomous software production system <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>. It traces the path from where most developers are today (Level 2, by Shapiro's reckoning) to where StrongDM claims to be operating (Level 5), and asks whether the gap between those levels is a matter of time or a matter of trust.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Five Levels</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>In January 2026, Dan Shapiro published "The Five Levels: from Spicy Autocomplete to the Dark Factory," a framework that gave the industry a shared vocabulary for describing the rapidly shifting relationship between human developers and AI coding tools <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>. The framework drew an explicit analogy to autonomous driving levels, mapping the progression from full human control to full machine autonomy.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>**Level 0: Spicy Autocomplete.** "Level Zero is your parents' Volvo, maybe with an automatic transmission. Whether it's vi or Visual Studio, not a character hits the disk without your approval. You might use AI as a search engine on steroids or occasionally hit tab to accept a suggestion, but the code is unmistakably yours" <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>. At this level, AI is a convenience, not a collaborator. The developer writes the code, makes all architectural decisions, and uses AI only for occasional lookups or completions. The developer's mental model of the system is complete and unquestioned.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**Level 1: The Coding Intern.** "At Level 1, you've got lanekeeping and cruise control. You're writing the important stuff, but you offload specific, discrete tasks to your AI intern" <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>. The developer delegates bounded tasks --- writing a unit test, generating a boilerplate function, translating code between languages --- while maintaining full understanding and control of the overall system. The AI handles the tedious parts; the human handles the thinking.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>**Level 2: The Junior Developer.** "At Level 2, you've got Autopilot on the highway. You've got a junior buddy to hand off all your boring stuff to. This is where 90% of 'AI-native' developers are living right now" <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>. This is the level at which AI begins to alter the developer's workflow in structural ways. Instead of writing code and having the AI help, the developer starts describing what they want and having the AI write it. The developer still reviews every output, still understands the codebase, and still makes all design decisions. But the act of typing code --- the physical craft of programming --- begins to shift from the human to the machine.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>The observation that 90% of AI-native developers are at Level 2 is perhaps the most important number in Shapiro's framework. It means that for the vast majority of developers who consider themselves sophisticated AI users, the AI is still fundamentally an assistant. It has not changed the structure of their work. It has changed the speed.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**Level 3: The Developer (Human as Manager).** "Level 3 is a Waymo with a safety driver. You're not a senior developer anymore; that's your AI's job. You are... a manager. You are the human in the loop" <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>. At this level, the developer's role shifts from writing code to directing the AI that writes code. The developer specifies requirements, reviews outputs, and makes architectural decisions, but does not personally write implementation code. The AI is not an assistant; it is the developer. The human is the manager.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>This is the level at which the cognitive demands of the work change qualitatively. A developer at Level 3 needs different skills than a developer at Level 2. They need the ability to specify requirements precisely, to evaluate AI-generated code for correctness and quality, and to maintain a mental model of a system they did not build line by line. Some developers find this transition natural; others find it deeply uncomfortable.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>**Level 4: The Engineering Team.** "More of an engineering manager or product/program/project manager. You collaborate on specs and plans, the agents do the work" <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>. At Level 4, the human's role shifts further from technical evaluation to strategic direction. The human defines what should be built and why, negotiates priorities, and evaluates whether the delivered product meets business requirements. The technical work --- architecture, implementation, testing, deployment --- is handled by AI agents working in coordination.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>**Level 5: The Dark Software Factory.** "Like a factory run by robots where the lights are out because robots don't need to see" <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>. At Level 5, "it's not really a car any more... your software process isn't really a software process any more. It's a black box that turns specs into software" <span class="co">[</span><span class="ot">@shapiro2026_fivelevels</span><span class="co">]</span>.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>@fig-five-levels maps the progression from full human control to full machine autonomy.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="al">![Dan Shapiro's Five Levels of AI-assisted software development](../images/generated/five-levels.png)</span>{#fig-five-levels}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Willison's characterization of Level 5 teams was stark: "Nobody reviews AI-produced code, ever. They don't even look at it." The organizing principle of Level 5 is that "the goal of the system is to prove that the system works" <span class="co">[</span><span class="ot">@willison2026_softwarefactory</span><span class="co">]</span>. The teams operating at this level consist of experienced developers, but their focus is not on the code itself. It is on system design, specification quality, and demonstrating that the AI-driven process produces correct results.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>The gap between Level 2, where most developers live, and Level 5, where StrongDM claims to operate, is not merely a gap of tooling. It is a gap of philosophy. At Level 2, the developer is still the author. At Level 5, the developer is the architect of a process that produces software without human authorship. The difference is less like upgrading a car and more like replacing driving with teleportation.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## StrongDM: The Proof of Concept</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>The StrongDM software factory was not an abstraction. It was a working system, built by three people, that produced production software without human code authorship or review.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>The team was small by design. Justin McCarthy, co-founder and CTO of StrongDM, had been thinking about AI-driven software development since before the current generation of models made it practical. When he founded the software factory on July 14, 2025, he brought Jay Taylor and Navan Chauhan --- a team of three, operating with principles that most engineering organizations of any size would consider reckless <span class="co">[</span><span class="ot">@strongdm2026_factory</span><span class="co">]</span>.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Their investment in AI tooling was correspondingly aggressive. "If you haven't spent at least $1,000 on tokens today per human engineer, your software factory has room for improvement," the StrongDM manifesto stated <span class="co">[</span><span class="ot">@strongdm2026_factory</span><span class="co">]</span>. This was not a figure of speech. At $1,000 per engineer per day, the team was spending roughly $66,000 per month on AI tokens alone --- a sum that would have been inconceivable for a three-person team in any prior era of software development, but that StrongDM considered a bargain compared to the cost of additional human engineers.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>The key technical innovation was the Digital Twin Universe (DTU): "behavioral clones of the third-party services our software depends on" <span class="co">[</span><span class="ot">@strongdm2026_factory</span><span class="co">]</span>. StrongDM's product integrated with external services --- Okta for identity management, Jira for project tracking, Slack for communication, Google Docs and Drive and Sheets for document management. Testing against these live services was expensive, slow, and fragile. Rate limits, abuse detection, and API costs all constrained how aggressively the team could test.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>The DTU eliminated these constraints. By creating behavioral clones of each external service --- clones that replicated the API behavior, error conditions, and edge cases of the real services --- the team could run "thousands of scenarios per hour without hitting rate limits, triggering abuse detection, or accumulating API costs" <span class="co">[</span><span class="ot">@strongdm2026_factory</span><span class="co">]</span>. The clones were not simple mocks. They were detailed behavioral models, designed to reproduce the quirks and failure modes of the real services with enough fidelity that code tested against the DTU would work correctly against the production services.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>The DTU was the foundation that made the no-review policy viable. If you cannot read the code --- and StrongDM's principles said you must not --- then you need another way to establish confidence that it works. The DTU provided that confidence through exhaustive scenario-based testing, running the software through thousands of realistic usage patterns and verifying that it behaved correctly in each one.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Economics of the Software Factory</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>StrongDM's $1,000-per-day-per-engineer token budget inverts traditional software economics. A senior software engineer in the Bay Area costs $200,000--$400,000 per year in total compensation. At $1,000 per day ($260,000 per year), StrongDM's AI token spend per engineer roughly matches the cost of an additional human. But the AI does not need health insurance, does not take vacations, does not have context-switching costs, and can work around the clock. If the three-person team plus AI tokens produces the output of a fifteen-person team, the economics are compelling. If it produces the output of a thirty-person team, the economics are transformative.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Attractor</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>At the center of StrongDM's software factory was Attractor: a non-interactive coding agent that composed models, prompts, and tools into a graph-structured pipeline <span class="co">[</span><span class="ot">@strongdm2026_attractor</span><span class="co">]</span>. Where most AI coding tools were designed as interactive assistants --- waiting for human input, responding to prompts, requiring approval at each step --- Attractor was designed to operate end-to-end once the work was fully specified.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>The tool's architecture reflected the Level 5 philosophy. Pipeline authors defined multi-stage AI workflows as directed graphs using Graphviz DOT syntax, specifying the sequence of operations, the models and tools involved at each stage, and the data flowing between them. The result was a declarative specification of the software development process itself --- a meta-program that described how to produce programs.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>The most striking feature of the Attractor GitHub repository (github.com/strongdm/attractor) was that it contained no code. It consisted of three markdown specification files <span class="co">[</span><span class="ot">@strongdm2026_attractor</span><span class="co">]</span>. The specifications served as the source of truth: feed them into your coding agent, and the agent would build its own implementation of the Attractor pipeline. The tool was, in other words, a specification that created its own implementation --- a practical demonstration of the Level 5 principle that specs become software.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scenario-Based Testing and the Verification Problem</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>The no-review policy raised a problem that Willison identified as existential: "how can you prove that software you are producing works if both the implementation and the tests are being written for you by coding agents?" <span class="co">[</span><span class="ot">@willison2026_softwarefactory</span><span class="co">]</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>This is not a hypothetical concern. The entire edifice of software quality assurance rests on the assumption that the person writing the tests is independent of the person writing the code. When a human developer writes a function and a separate human tester writes the test, the independence between them provides a check: if the developer misunderstands the requirement, the tester will catch the discrepancy. If the developer makes a systematic error, the tester's different perspective will expose it.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>When AI writes both the implementation and the tests, this independence vanishes. An AI system that misunderstands a requirement will misunderstand it consistently, producing implementation code and test code that agree with each other while both being wrong. The tests will pass. The system will appear correct. And the error will remain hidden until it manifests in production.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>StrongDM's answer to this problem was built on three pillars.</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>**Scenario-based testing.** Instead of traditional unit and integration tests, StrongDM organized its quality assurance around "scenarios" --- end-to-end user stories that represented complete workflows. A scenario might describe a user logging into the system via Okta, creating a Jira ticket, sharing a document via Google Drive, and receiving a notification in Slack. The scenario was not a test in the traditional sense; it was a description of expected behavior, "often stored outside the codebase (similar to a 'holdout' set in model training)" <span class="co">[</span><span class="ot">@strongdm2026_factory</span><span class="co">]</span>.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>The holdout analogy was deliberate and revealing. In machine learning, a holdout set is data that the model never sees during training, used to evaluate whether the model has learned generalizable patterns or merely memorized its training data. By storing scenarios outside the codebase, StrongDM created a similar separation: the AI that produced the code never saw the scenarios used to evaluate it, reducing the risk that the tests and the implementation would share the same systematic errors.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>**Probabilistic satisfaction.** StrongDM moved away from the boolean pass/fail model of traditional testing. Instead, they defined a metric called "satisfaction" --- "the fraction of observed trajectories likely satisfying user requirements" <span class="co">[</span><span class="ot">@strongdm2026_factory</span><span class="co">]</span>. A scenario was not simply "passed" or "failed"; it was evaluated across multiple runs, with the fraction of successful trajectories providing a probabilistic measure of correctness.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>This approach acknowledged a reality that traditional testing often obscures: software correctness is not binary in practice. A function that works correctly 999 times out of 1,000 is more useful than a function that fails deterministically on its first call, even though both would "fail" a traditional test. By measuring satisfaction probabilistically, StrongDM could make nuanced assessments of software quality that better reflected real-world performance.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>**The Digital Twin Universe.** The DTU, described above, provided the environment in which scenarios were executed. By running scenarios against behavioral clones of external services, the team could test at a scale and speed that would be impossible against production services. Thousands of scenario executions per hour generated enough data to make the probabilistic satisfaction metric statistically meaningful.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Architecture of Trust</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>The deeper question beneath Willison's formulation is not technical but philosophical: how do you trust code that no human has read?</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Traditional software engineering is built on a foundation of human comprehension. Code review exists not only to catch bugs but to ensure that at least two humans understand every line of production code. Documentation exists to make code comprehensible to future humans. Architecture decisions are discussed in design reviews so that the reasoning behind them is preserved in human memory and institutional knowledge.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>The software factory model abandons all of this. No human reads the code. No human reviews the architecture. No human documents the reasoning. The system produces software, and the software either satisfies its scenarios or it does not.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>StrongDM's answer is that trust should be empirical rather than interpretive. You trust the code not because you have read it and judged it correct, but because you have tested it exhaustively and observed it behaving correctly across thousands of scenarios. This is the same epistemological shift that occurred in machine learning itself: we trust a neural network not because we understand its internal representations, but because it performs correctly on held-out test data.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>The analogy is imperfect. A neural network's internal representations are genuinely opaque --- no human could read the millions of parameters and understand what the network has learned. Source code, by contrast, is designed to be human-readable. The choice not to read it is a policy decision, not a technical necessity. StrongDM argues that the policy is justified by efficiency: reading code takes time, human review catches only a fraction of bugs, and automated testing can cover more scenarios more reliably than any human reviewer.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>@fig-software-factory-arch illustrates the architecture of this trust-based system --- from specification through automated verification.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="al">![The software factory architecture](../images/diagrams/software-factory-architecture.svg)</span>{#fig-software-factory-arch}</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Critics counter that human review serves functions beyond bug-catching. It builds institutional knowledge. It trains junior developers. It creates a shared understanding of the system that enables effective debugging when things go wrong in ways that no scenario anticipated. A system that no human understands is a system that no human can fix when it breaks in novel ways.</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>This debate is not yet resolved, and it may not be resolvable in the abstract. The answer may depend on the specific domain, the specific failure modes, and the specific cost of getting it wrong. A software factory producing internal tooling for a three-person team has a very different risk profile than one producing medical device firmware or financial trading systems.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Catalyst: October 2024</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>The software factory was not built on the models of November 2025. Its foundations were laid earlier, in a moment that Willison and the StrongDM team both identified as the critical inflection: the second revision of Claude 3.5 Sonnet in October 2024.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>Before that revision, Willison observed, "long-horizon agentic coding workflows began to compound correctness rather than error" <span class="co">[</span><span class="ot">@willison2026_softwarefactory</span><span class="co">]</span>. This is a precise technical observation with profound practical implications. In a coding workflow where each step builds on the previous one, errors compound. If the model makes a mistake in step 3 of a 20-step task, every subsequent step is built on a flawed foundation. Before October 2024, this compounding error made long autonomous coding sessions impractical. The model might get the first few steps right, but by step 10 or 15, the accumulated errors had overwhelmed the output.</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>The October 2024 revision changed this dynamic. The model became better at maintaining consistency across long sequences of actions, catching its own errors before they propagated, and using earlier correct steps as reliable context for later ones. By December 2024, Willison noted, "the model's long-horizon coding performance was unmistakable via Cursor's YOLO mode" --- a feature that allowed the AI to make code changes without requesting human approval at each step <span class="co">[</span><span class="ot">@willison2026_softwarefactory</span><span class="co">]</span>.</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>This was the enabling technology that made the software factory conceivable. If models compound errors over long sequences, autonomous software production is impossible. If models compound correctness, it becomes practical. The October 2024 revision was the inflection point between these two regimes, and the November 2025 models (as examined in @sec-november-revolution) dramatically extended the range over which correctness compounded.</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Who Is Actually at Level 5?</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>The honest answer: very few teams.</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>StrongDM is the most public and most documented example of a team operating at Level 5. Their willingness to publish their principles, open-source their specifications, and invite scrutiny from analysts like Willison makes them the case study that the rest of the industry points to. But they are a three-person team building a specific category of software (security infrastructure tooling) with a specific risk profile. Generalizing from their experience to the broader industry requires caution.</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>Shapiro's observation that 90% of AI-native developers are at Level 2 suggests that the gap between the frontier and the mainstream remains enormous. Most developers who consider themselves AI-savvy are still writing code, still reviewing every AI output, and still maintaining a personal understanding of their codebase. They are using AI to go faster, not to restructure the fundamental relationship between human and code.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>The teams operating at Level 3 and Level 4 --- the levels where the human shifts from developer to manager --- are more numerous but harder to count, because they rarely publicize their practices. Some of the compounding teams described in @sec-compounding-teams are operating at these levels, building internal frameworks around AI models and treating the AI as the developer rather than the assistant. But the transition from Level 2 to Level 3 is not just a matter of better tools. It is a matter of trust, organizational culture, and individual psychology.</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Level 5 Caveat</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>It is worth noting what Level 5 requires that most organizations lack: a comprehensive scenario-based testing framework, behavioral clones of all external dependencies, a probabilistic quality metric, and --- perhaps most importantly --- a team of experienced developers who are confident enough in their system design skills to never look at the code their system produces. Level 5 is not a destination that any team can reach simply by upgrading their AI tools. It requires a ground-up rethinking of how software quality is defined and measured.</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Shifting Definition of "Developer"</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>The five-level framework illuminates a question that the industry has been circling for months: what does it mean to be a software developer in an era when AI writes the code?</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>At Level 0 through Level 2, the answer is familiar. A developer writes code, understands systems, and uses AI to accelerate the mechanical aspects of the work. The core identity --- the part that answers "what do you do?" at a dinner party --- is unchanged.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>At Level 3 and above, the answer becomes genuinely uncertain. A person who specifies requirements, evaluates AI-generated outputs, and manages AI agents is doing important, skilled work. But is that person a "developer"? Or are they a product manager, a systems architect, a quality engineer? The distinction is not merely semantic. It affects hiring criteria, compensation structures, educational curricula, and professional identity.</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>Daniela Amodei, co-founder of Anthropic, gestured toward this shift in her February 2026 comments about hiring priorities. As she described in the interview examined in @sec-voices-of-warning, Anthropic now hired primarily for communication, emotional intelligence, and curiosity rather than raw technical skill --- and she argued that humanities education would become more important, not less, in an AI-driven world <span class="co">[</span><span class="ot">@damodei2026_generalists</span><span class="co">]</span>.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>This is not what a technology company's co-founder would have said five years ago. The shift from hiring for technical skills to hiring for communication, emotional intelligence, and broad intellectual curiosity reflects a recognition that the nature of the work is changing. When AI writes the code, the scarce human contributions are judgment, taste, empathy, and the ability to understand what users actually need --- qualities that the humanities cultivate more directly than a computer science curriculum.</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>The software factory model takes this logic to its extreme. In a Level 5 organization, there is no code to write and no code to review. The human contributions are specification (saying precisely what should be built), system design (creating the architectural framework within which the AI operates), and validation (confirming that the output meets requirements). These are cognitive and communicative tasks, not technical ones in the traditional sense.</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Consequential Question</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>Willison's question --- how do you prove that software works when both the implementation and the tests are AI-generated? --- does not yet have a definitive answer. StrongDM's approach of scenario-based testing with holdout sets and probabilistic satisfaction is the most developed response, but it remains unproven at scale and in high-stakes domains.</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>The question is consequential because it sits at the intersection of two powerful forces. On one side, the economic incentive to adopt AI-driven software development is overwhelming. The cost savings, speed improvements, and competitive advantages are too large to ignore, particularly for startups and small teams that cannot afford large engineering organizations. On the other side, the reliability requirements of many software domains --- healthcare, finance, transportation, infrastructure --- are non-negotiable. A software factory that produces code no human has reviewed might be acceptable for internal tooling. It is not acceptable for the software controlling a nuclear power plant.</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>The resolution of this tension will likely determine the pace and scope of AI adoption in software development over the coming years. If scenario-based testing and probabilistic quality metrics prove reliable enough for high-stakes domains, the shift to Level 4 and Level 5 development will accelerate rapidly. If they do not --- if the verification problem proves intractable without human review --- then the adoption curve will plateau at Level 2 or Level 3, and the software factory will remain a niche approach for specific categories of work.</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>Either way, the question itself has been posed. The old model --- human writes code, human reviews code, human maintains code --- is no longer the only model. The software factory exists. It works, at least for its creators. And the rest of the industry is watching to see whether the principles that StrongDM articulated in July 2025 will become the standard practices of 2027.</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>The lights are out. The robots are working. And Simon Willison's question hangs in the air, unanswered.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zeroshotpress/Something-Big-Already-Happened/edit/main/chapters/09-software-factory.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/zeroshotpress/Something-Big-Already-Happened/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

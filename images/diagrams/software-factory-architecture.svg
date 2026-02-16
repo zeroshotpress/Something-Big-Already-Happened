@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#FF6B35"/>
+    </marker>
+    <marker id="arrow-indigo" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366F1"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10B981"/>
+    </marker>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D0D1A;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#12122A;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A2E;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#16213E;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="twinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#16213E;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#1A1A2E;stop-opacity:0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="600" fill="url(#bgGradient)"/>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" fill="#E8E8F0" font-family="sans-serif" font-size="20" font-weight="bold">Software Factory Architecture</text>
+  <text x="500" y="58" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="12">StrongDM-style autonomous development pipeline</text>
+
+  <!-- ==================== MAIN PIPELINE ==================== -->
+
+  <!-- Box 1: Markdown Specs (Input) -->
+  <rect x="30" y="140" width="150" height="90" rx="10" ry="10" fill="url(#boxGrad)" stroke="#6366F1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="105" y="175" text-anchor="middle" fill="#E8E8F0" font-family="sans-serif" font-size="13" font-weight="bold">Markdown</text>
+  <text x="105" y="195" text-anchor="middle" fill="#E8E8F0" font-family="sans-serif" font-size="13" font-weight="bold">Specs</text>
+  <text x="105" y="218" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">Human input</text>
+
+  <!-- Arrow: Specs -> Coding Agent -->
+  <line x1="180" y1="185" x2="225" y2="185" stroke="#FF6B35" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: AI Coding Agent -->
+  <rect x="230" y="130" width="170" height="110" rx="10" ry="10" fill="url(#boxGrad)" stroke="#FF6B35" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="315" y="165" text-anchor="middle" fill="#FF6B35" font-family="sans-serif" font-size="14" font-weight="bold">AI Coding</text>
+  <text x="315" y="185" text-anchor="middle" fill="#FF6B35" font-family="sans-serif" font-size="14" font-weight="bold">Agent</text>
+  <text x="315" y="210" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">Claude Code /</text>
+  <text x="315" y="225" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">Codex equivalent</text>
+
+  <!-- Arrow: Coding Agent -> Code Output -->
+  <line x1="400" y1="185" x2="445" y2="185" stroke="#FF6B35" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 3: Code Output -->
+  <rect x="450" y="140" width="140" height="90" rx="10" ry="10" fill="url(#boxGrad)" stroke="#6366F1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="520" y="175" text-anchor="middle" fill="#E8E8F0" font-family="sans-serif" font-size="13" font-weight="bold">Code Output</text>
+  <text x="520" y="198" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">PRs, branches,</text>
+  <text x="520" y="215" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">full implementations</text>
+
+  <!-- Arrow: Code Output -> Testing Agent -->
+  <line x1="590" y1="185" x2="635" y2="185" stroke="#FF6B35" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 4: AI Testing Agent -->
+  <rect x="640" y="130" width="160" height="110" rx="10" ry="10" fill="url(#boxGrad)" stroke="#10B981" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="720" y="165" text-anchor="middle" fill="#10B981" font-family="sans-serif" font-size="14" font-weight="bold">AI Testing</text>
+  <text x="720" y="185" text-anchor="middle" fill="#10B981" font-family="sans-serif" font-size="14" font-weight="bold">Agent</text>
+  <text x="720" y="210" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">Automated QA,</text>
+  <text x="720" y="225" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">integration tests</text>
+
+  <!-- Arrow: Testing Agent -> Deployment -->
+  <line x1="800" y1="185" x2="845" y2="185" stroke="#10B981" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <!-- Box 5: Deployment -->
+  <rect x="850" y="140" width="120" height="90" rx="10" ry="10" fill="url(#boxGrad)" stroke="#10B981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="910" y="178" text-anchor="middle" fill="#E8E8F0" font-family="sans-serif" font-size="13" font-weight="bold">Deployment</text>
+  <text x="910" y="200" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">Auto-merge &amp;</text>
+  <text x="910" y="215" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">ship to prod</text>
+
+  <!-- ==================== FEEDBACK LOOP ==================== -->
+  <!-- Curved arrow from Testing back to Coding -->
+  <path d="M 680 240 Q 680 290, 520 290 Q 360 290, 350 240" fill="none" stroke="#6366F1" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-indigo)"/>
+  <text x="520" y="282" text-anchor="middle" fill="#6366F1" font-family="sans-serif" font-size="10" font-weight="bold">Feedback Loop (failures auto-retry)</text>
+
+  <!-- ==================== DIGITAL TWIN UNIVERSE ==================== -->
+  <rect x="80" y="370" width="840" height="170" rx="14" ry="14" fill="url(#twinGrad)" stroke="#2D2D44" stroke-width="2" stroke-dasharray="8,4" filter="url(#shadow)"/>
+
+  <text x="500" y="400" text-anchor="middle" fill="#E8E8F0" font-family="sans-serif" font-size="15" font-weight="bold">Digital Twin Universe</text>
+  <text x="500" y="418" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="11">Sandboxed clones of production services for safe AI agent interaction</text>
+
+  <!-- Digital Twin service boxes -->
+  <!-- Okta -->
+  <rect x="120" y="440" width="130" height="55" rx="8" ry="8" fill="#0D0D1A" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="185" y="465" text-anchor="middle" fill="#6366F1" font-family="sans-serif" font-size="12" font-weight="bold">Okta Clone</text>
+  <text x="185" y="483" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="10">Auth &amp; identity</text>
+
+  <!-- Jira -->
+  <rect x="280" y="440" width="130" height="55" rx="8" ry="8" fill="#0D0D1A" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="345" y="465" text-anchor="middle" fill="#6366F1" font-family="sans-serif" font-size="12" font-weight="bold">Jira Clone</text>
+  <text x="345" y="483" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="10">Issue tracking</text>
+
+  <!-- Slack -->
+  <rect x="440" y="440" width="130" height="55" rx="8" ry="8" fill="#0D0D1A" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="505" y="465" text-anchor="middle" fill="#6366F1" font-family="sans-serif" font-size="12" font-weight="bold">Slack Clone</text>
+  <text x="505" y="483" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="10">Communication</text>
+
+  <!-- Google Docs -->
+  <rect x="600" y="440" width="140" height="55" rx="8" ry="8" fill="#0D0D1A" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="670" y="465" text-anchor="middle" fill="#6366F1" font-family="sans-serif" font-size="12" font-weight="bold">Docs Clone</text>
+  <text x="670" y="483" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="10">Documentation</text>
+
+  <!-- GitHub -->
+  <rect x="770" y="440" width="120" height="55" rx="8" ry="8" fill="#0D0D1A" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="830" y="465" text-anchor="middle" fill="#6366F1" font-family="sans-serif" font-size="12" font-weight="bold">Git Clone</text>
+  <text x="830" y="483" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="10">Source control</text>
+
+  <!-- Dashed vertical connections from Coding Agent and Testing Agent down to Digital Twin -->
+  <line x1="315" y1="240" x2="315" y2="370" stroke="#2D2D44" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="720" y1="240" x2="720" y2="370" stroke="#2D2D44" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Connection labels -->
+  <text x="325" y="330" fill="#6B7280" font-family="sans-serif" font-size="9">reads/writes</text>
+  <text x="730" y="330" fill="#6B7280" font-family="sans-serif" font-size="9">validates against</text>
+
+  <!-- Bottom caption -->
+  <text x="500" y="575" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="11">Agents operate in sandboxed twins, promoting to production only after passing all tests</text>
+
+  <!-- Pipeline flow label -->
+  <text x="500" y="115" text-anchor="middle" fill="#FF6B35" font-family="sans-serif" font-size="12" font-weight="bold" letter-spacing="3">PIPELINE FLOW</text>
+  <line x1="420" y1="120" x2="580" y2="120" stroke="#FF6B35" stroke-width="0.5" opacity="0.5"/>
+</svg>

@@ -1,0 +1,29 @@
+date,model_name,organization,key_capability,parameter_count_est,context_window,benchmark_highlights,source_url
+2024-03-04,Claude 3 (Opus/Sonnet/Haiku),Anthropic,Vision capabilities and three performance tiers,Unknown,200K tokens,Near-human performance on expert benchmarks; first Claude with vision,https://en.wikipedia.org/wiki/Claude_(language_model)
+2024-04-09,GPT-4 Turbo,OpenAI,Extended knowledge cutoff and longer context,Unknown,128K tokens,Knowledge updated to Dec 2023; improved instruction following,https://en.wikipedia.org/wiki/GPT-4
+2024-05-13,GPT-4o,OpenAI,Omni-modal: real-time text/audio/image processing,Unknown,128K tokens,SOTA voice/multilingual/vision; 2x efficiency vs GPT-4 Turbo,https://en.wikipedia.org/wiki/GPT-4o
+2024-05-23,Gemini 1.5 Pro,Google DeepMind,Breakthrough 1M token context window,Unknown,1M tokens (later 2M),Long-context reasoning; multimodal understanding,https://en.wikipedia.org/wiki/Gemini_(language_model)
+2024-06-20,Claude 3.5 Sonnet,Anthropic,Outperformed Claude 3 Opus at 2x speed,Unknown,200K tokens,SOTA on coding benchmarks; Artifacts feature; SWE-bench 49%,https://en.wikipedia.org/wiki/Claude_(language_model)
+2024-07-23,Llama 3.1 (8B/70B/405B),Meta,Largest open-source model at 405B parameters,405B,128K tokens,Competitive with closed models; open license allowing output use for training,https://ai.meta.com/blog/meta-llama-3-1/
+2024-09-12,o1,OpenAI,Chain-of-thought reasoning model for STEM,Unknown,128K tokens,83% on International Math Olympiad; new reasoning paradigm,https://en.wikipedia.org/wiki/GPT-4
+2024-12-11,Gemini 2.0 Flash,Google DeepMind,Fast multimodal model outperforming 1.5 Pro,Unknown,1M tokens,Outperforms 1.5 Pro on key benchmarks at 2x speed,https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/
+2024-12-20,o3,OpenAI,Advanced reasoning with configurable analysis depth,Unknown,128K tokens,72% SWE-bench Verified; major reasoning improvements over o1,https://en.wikipedia.org/wiki/GPT-4
+2024-12-26,DeepSeek-V3,DeepSeek,Cost-efficient training at $6M; MoE architecture,671B (37B active),128K tokens,Competitive with GPT-4 at fraction of training cost,https://en.wikipedia.org/wiki/DeepSeek
+2025-01-20,DeepSeek-R1,DeepSeek,Open-source reasoning model rivaling o1,Unknown,128K tokens,Comparable to o1 across domains; MIT license; triggered NVIDIA 18% stock drop,https://en.wikipedia.org/wiki/DeepSeek_(chatbot)
+2025-02-24,Claude 3.7 Sonnet,Anthropic,Extended thinking / hybrid reasoning,Unknown,200K tokens,Complex math/science/code improvements; ~50min METR time horizon,https://en.wikipedia.org/wiki/Claude_(language_model)
+2025-03,Gemini 2.5 Pro,Google DeepMind,Most intelligent Google model,Unknown,1M tokens,SOTA on multiple benchmarks; strong reasoning,https://blog.google/innovation-and-ai/models-and-research/google-deepmind/google-gemini-updates-io-2025/
+2025-05-22,Claude Opus 4,Anthropic,Extended thinking with tool use during reasoning,Unknown,200K tokens,Strong agentic capabilities; tools during thinking,https://www.anthropic.com/news/claude-4
+2025-05-22,Claude Sonnet 4,Anthropic,Balanced performance with extended thinking,Unknown,200K tokens,62% SWE-bench Verified; good cost-performance ratio,https://www.anthropic.com/news/claude-4
+2025-06,Gemini 2.5 Flash,Google DeepMind,Fast reasoning model,Unknown,1M tokens,Efficient reasoning at scale,https://blog.google/innovation-and-ai/models-and-research/google-deepmind/google-gemini-updates-io-2025/
+2025-08-07,GPT-5,OpenAI,Unified reasoning with automatic routing,Unknown,128K tokens,94.6% AIME 2025; 74.9% SWE-bench; 80% fewer hallucinations vs o3,https://openai.com/index/introducing-gpt-5/
+2025-08,Claude Opus 4.1,Anthropic,Improved agentic capabilities,Unknown,200K tokens,~2.5hr METR time horizon (estimated),https://claudefa.st/blog/models
+2025-09,Claude Sonnet 4.5,Anthropic,Enhanced coding and planning,Unknown,200K tokens,18% planning improvement for Devin; 12% end-to-end eval boost,https://www.anthropic.com/news/claude-sonnet-4-5
+2025-10,Claude Haiku 4.5,Anthropic,Fast efficient model,Unknown,200K tokens,Strong performance at low cost,https://claudefa.st/blog/models
+2025-11,GPT-5.1 Codex-Max,OpenAI,Specialized coding with large codebase understanding,Unknown,Unknown,Built specifically for coding tasks,https://openai.com/index/introducing-gpt-5-2/
+2025-11-17,Grok 4.1,xAI,Emotional intelligence and creative capabilities; low hallucination,Unknown,Unknown,1483 Elo on LMArena (Thinking); 4.22% hallucination rate (65% reduction); EQ-Bench 1586,https://x.ai/news/grok-4-1
+2025-11-18,Gemini 3,Google DeepMind,Next-generation multimodal,Unknown,1M tokens,1501 Elo on LMArena; strong multimodal capabilities,https://vertu.com/lifestyle/the-ai-model-race-reaches-singularity-speed/
+2025-11-24,Claude Opus 4.5,Anthropic,SOTA coding and computer use; 67% cheaper than prev Opus,Unknown,200K tokens,79.2% SWE-bench; 4hr 49min METR time horizon; SOTA agentic coding,https://www.anthropic.com/news/claude-opus-4-6
+2025-12-04,Gemini 3 Deep Think,Google DeepMind,Advanced reasoning for science/research/engineering,Unknown,1M tokens,Gold-medal IMO 2025; GPQA Diamond 93.8%; ARC-AGI-2 45.1%; Humanity's Last Exam 41.0%,https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/
+2025-12-11,GPT-5.2,OpenAI,Three variants: Instant/Thinking/Pro,Unknown,400K tokens,75.4% SWE-bench Verified; expanded context window,https://openai.com/index/introducing-gpt-5-2/
+2026-02-05,Claude Opus 4.6,Anthropic,Agent teams; 1M context (beta); office integrations,Unknown,1M tokens (beta),Outperforms GPT-5.2 by 144 Elo on GDPval-AA; 79.2% SWE-bench (Thinking),https://www.anthropic.com/news/claude-opus-4-6
+2026-02-05,GPT-5.3-Codex,OpenAI,First self-improving model; enhanced agentic coding,Unknown,Unknown,New highs on SWE-Bench Pro and Terminal-Bench; first model instrumental in creating itself,https://openai.com/index/introducing-gpt-5-3-codex/

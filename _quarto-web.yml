@@ -1,0 +1,22 @@
+# Quarto profile: web (HTML for GitHub Pages)
+# Usage: quarto render --profile web
+
+format:
+  html:
+    theme:
+      dark: darkly
+      light: flatly
+    css:
+      - styles/theme.css
+      - styles/components.css
+      - styles/print.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    search: true
+    code-link: true
+    code-fold: true
+    code-tools: true
+    fig-responsive: true
+    anchor-sections: true
+    smooth-scroll: true

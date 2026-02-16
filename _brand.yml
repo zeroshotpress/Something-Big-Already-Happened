@@ -1,0 +1,123 @@
+# ==========================================================================
+# Something Big Already Happened — Quarto Brand Configuration
+# Design system tokens for consistent theming across all outputs
+# ==========================================================================
+
+meta:
+  name: "Something Big Already Happened"
+  link:
+    home: "https://github.com/sbah-research/Something-Big-Already-Happened"
+
+color:
+  palette:
+    # Core backgrounds
+    navy-black: "#0D0D1A"
+    dark-secondary: "#1A1A2E"
+    dark-card: "#16213E"
+    dark-elevated: "#1E2A4A"
+    dark-code: "#0A0A1A"
+
+    # Accent colors
+    warm-orange: "#FF6B35"
+    warm-orange-light: "#FF9F6B"
+    warm-orange-dark: "#CC5529"
+    indigo: "#6366F1"
+    indigo-light: "#A5B4FC"
+    indigo-dark: "#4F46E5"
+
+    # Semantic colors
+    success-green: "#10B981"
+    warning-amber: "#F59E0B"
+    error-red: "#EF4444"
+
+    # Text colors
+    text-light: "#E8E8F0"
+    text-secondary: "#9CA3AF"
+    text-muted: "#6B7280"
+
+    # Borders
+    border-dark: "#2D2D44"
+    border-light: "#3D3D5C"
+
+    # Print overrides
+    print-bg: "#ffffff"
+    print-text: "#1a1a2e"
+    print-secondary: "#4a4a6a"
+
+  foreground: "#E8E8F0"
+  background: "#0D0D1A"
+  primary: "#FF6B35"
+  secondary: "#6366F1"
+  success: "#10B981"
+  info: "#6366F1"
+  warning: "#F59E0B"
+  danger: "#EF4444"
+  light: "#E8E8F0"
+  dark: "#0D0D1A"
+
+typography:
+  fonts:
+    - family: "Playfair Display"
+      source: google
+      weight: [400, 700, 900]
+      style: [normal, italic]
+    - family: "Inter"
+      source: google
+      weight: [300, 400, 500, 600, 700, 800, 900]
+      style: normal
+    - family: "JetBrains Mono"
+      source: google
+      weight: [400, 500, 600]
+      style: normal
+
+  base:
+    family: "Inter"
+    size: "1.0625rem"
+    weight: 400
+    line-height: 1.8
+
+  headings:
+    family: "Playfair Display"
+    weight: 700
+    style: normal
+    line-height: 1.1
+    color: "#ffffff"
+
+  monospace:
+    family: "JetBrains Mono"
+    size: "0.875em"
+    weight: 400
+
+  monospace-inline:
+    family: "JetBrains Mono"
+    size: "0.875em"
+    color: "#A5B4FC"
+    background-color: "#1A1A2E"
+
+  monospace-block:
+    family: "JetBrains Mono"
+    size: "0.8125rem"
+    line-height: 1.7
+    color: "#A5B4FC"
+    background-color: "#0A0A1A"
+
+  link:
+    weight: 400
+    color: "#FF6B35"
+    decoration: none
+
+defaults:
+  shiny:
+    theme:
+      bg: "#0D0D1A"
+      fg: "#E8E8F0"
+      primary: "#FF6B35"
+      secondary: "#6366F1"
+
+  bootstrap:
+    version: 5
+    theme:
+      bg: "#0D0D1A"
+      fg: "#E8E8F0"
+      primary: "#FF6B35"
+      secondary: "#6366F1"

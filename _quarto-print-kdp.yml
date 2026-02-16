@@ -1,0 +1,37 @@
+# Quarto profile: print-kdp (PDF for KDP paperback, 6x9)
+# Usage: quarto render --profile print-kdp
+# This profile FULLY overrides the base _quarto.yml PDF settings.
+
+format:
+  pdf:
+    documentclass: scrbook
+    classoption:
+      - openany
+    pdf-engine: lualatex
+    papersize: custom
+    geometry:
+      - paperwidth=6in
+      - paperheight=9in
+      - inner=0.55in
+      - outer=0.45in
+      - top=0.55in
+      - bottom=0.60in
+    fontsize: 10pt
+    mainfont: "TeX Gyre Pagella"
+    sansfont: "TeX Gyre Heros"
+    monofont: "TeX Gyre Cursor"
+    linestretch: 1.05
+    indent: true
+    fig-pos: 'H'
+    fig-dpi: 300
+    fig-format: pdf
+    number-sections: true
+    toc: true
+    toc-depth: 2
+    colorlinks: true
+    link-citations: true
+    keep-tex: true
+    filters:
+      - scripts/print-image-filter.lua
+    include-in-header:
+      - templates/print-header.tex

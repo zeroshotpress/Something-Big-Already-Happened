@@ -1,0 +1,15 @@
+{
+  "script": "quote_audit",
+  "exit_code": 0,
+  "chapters_scanned": 15,
+  "total_quotes": 3,
+  "over_limit_quotes": 0,
+  "over_limit_sources": 0,
+  "global_source_words": {
+    "shumer2026": 34,
+    "amodei2026": 19
+  },
+  "global_over_limit": [],
+  "errors": [],
+  "warnings": []
+}

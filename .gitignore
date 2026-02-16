@@ -1,0 +1,43 @@
+# Quarto output
+_book/
+_freeze/
+.quarto/
+
+# LaTeX intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.tex
+!templates/print-header.tex
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# R / Python
+.Rhistory
+.Rdata
+.Rproj.user
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+env/
+
+# Environment / secrets
+.env
+.env.local
+
+/.quarto/

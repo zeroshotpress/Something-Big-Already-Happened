@@ -1,0 +1,22 @@
+date,model_or_period,autonomous_hours,measurement_type,source_url
+2019,GPT-2 era,0.03,estimated_from_trend,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2020,GPT-3 era,0.05,estimated_from_trend,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2021,Codex era,0.10,estimated_from_trend,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2022,ChatGPT era,0.17,estimated_from_trend,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2023-03,GPT-4,0.33,estimated_from_trend,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2024-05,GPT-4o,0.42,estimated_from_trend,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2024-06,Claude 3.5 Sonnet,0.50,estimated_from_trend,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2024-09,o1,0.67,estimated_above_GPT4o_below_Claude37,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2024-12,o3,0.90,estimated_from_1.8x_Claude37,https://evaluations.metr.org/openai-o3-report/
+2025-02,GPT-4.5,0.50,measured,https://x.com/METR_Evals/status/1895381625585967180
+2025-02,Claude 3.7 Sonnet,0.83,measured,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2025-04,o3 (updated),1.50,measured,https://evaluations.metr.org/openai-o3-report/
+2025-06,DeepSeek-V3,1.00,estimated,https://metr.org/time-horizons/
+2025-08,GPT-5,2.28,measured,https://evaluations.metr.org/gpt-5-report/
+2025-08,Claude Opus 4.1,2.50,estimated,https://metr.org/time-horizons/
+2025-11,GPT-5.1-Codex-Max,3.50,estimated,https://metr.org/time-horizons/
+2025-11,Claude Opus 4.5,4.82,measured,https://www.lesswrong.com/posts/q5ejXr4CRuPxkgzJD/claude-opus-4-5-achieves-50-time-horizon-of-around-4-hrs-49
+2026-01,METR Time Horizon 1.1 update,5.00,projected_latest_frontier,https://metr.org/blog/2026-1-29-time-horizon-1-1/
+2026-06,Projected (7-month doubling),9.64,projection,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2026-12,Projected (7-month doubling),16.00,projection,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+2027-06,Projected (7-month doubling),32.00,projection,https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/

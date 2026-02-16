@@ -1,0 +1,11 @@
+# Quarto profile: ebook (EPUB for KDP)
+# Usage: quarto render --profile ebook
+
+format:
+  epub:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-format: png
+    fig-dpi: 300
+    epub-cover-image: images/cover-ebook-1600x2560.png

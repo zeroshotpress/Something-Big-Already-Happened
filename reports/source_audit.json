@@ -1,0 +1,15 @@
+{
+  "script": "source_audit",
+  "exit_code": 0,
+  "total_citations": 242,
+  "tier1": 230,
+  "tier2": 12,
+  "tier3": 0,
+  "registered": 242,
+  "unregistered": 0,
+  "tier3_violations": 0,
+  "tier3_details": [],
+  "chapters_scanned": 15,
+  "errors": [],
+  "warnings": []
+}

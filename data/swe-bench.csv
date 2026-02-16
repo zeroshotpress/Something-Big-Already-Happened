@@ -1,0 +1,26 @@
+date,model,score_pct,organization,source_url
+2024-01,GPT-4 (RAG baseline),2.70,OpenAI,https://www.swebench.com/
+2024-03,Devin,13.86,Cognition,https://cognition.ai/blog/swe-bench-technical-report
+2024-04,AutoCodeRover,22.00,NUS/Industry,https://www.swebench.com/
+2024-04,SWE-Agent + GPT-4,18.00,Princeton,https://www.swebench.com/
+2024-06,Amazon Q Developer Agent,20.33,Amazon,https://www.swebench.com/
+2024-06,AbanteAI MentatBot + GPT-4o,38.00,AbanteAI,https://www.swebench.com/
+2024-07,CodeStory Aide (Claude 3.5 Sonnet + GPT-4o),43.00,CodeStory,https://www.swebench.com/
+2024-08,GPT-4o (SWE-bench Verified baseline),33.00,OpenAI,https://openai.com/index/introducing-swe-bench-verified/
+2024-09,o1-preview,45.00,OpenAI,https://openai.com/index/introducing-swe-bench-verified/
+2024-10,Claude 3.5 Sonnet (SWE-bench Verified),49.00,Anthropic,https://www.anthropic.com/research/swe-bench-sonnet
+2024-11,Devlo (Claude 3.5 Sonnet),47.30,Devlo,https://www.swebench.com/
+2024-11,Globant Code Fix (Claude 3.5 Sonnet),48.30,Globant,https://www.swebench.com/
+2024-11,GRU (GPT-4),48.67,GRU,https://www.swebench.com/
+2024-12,o3,72.00,OpenAI,https://www.swebench.com/
+2025-01,DeepSeek-R1 + scaffold,45.00,DeepSeek,https://www.swebench.com/
+2025-02,Claude 3.7 Sonnet,55.00,Anthropic,https://www.swebench.com/
+2025-05,Claude Sonnet 4,62.00,Anthropic,https://www.swebench.com/
+2025-06,TRAE (multi-model),75.20,ByteDance,https://www.swebench.com/
+2025-08,GPT-5,74.90,OpenAI,https://openai.com/index/introducing-gpt-5/
+2025-09,Claude Sonnet 4.5,70.00,Anthropic,https://www.swebench.com/
+2025-11,Gemini 3 Pro + Live-SWE-agent,77.40,Google DeepMind,https://epoch.ai/benchmarks/swe-bench-verified
+2025-11,Claude Opus 4.5 + Live-SWE-agent,79.20,Anthropic,https://epoch.ai/benchmarks/swe-bench-verified
+2025-12,GPT-5.2,75.40,OpenAI,https://llm-stats.com/benchmarks/swe-bench-verified
+2025-12,Gemini 3 Flash,76.20,Google DeepMind,https://llm-stats.com/benchmarks/swe-bench-verified
+2026-02,Claude Opus 4.6 (Thinking),79.20,Anthropic,https://llm-stats.com/benchmarks/swe-bench-verified

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Something Big Already Happened — Sample Chapter</title>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0D0D1A;
+    --bg-secondary: #1A1A2E;
+    --bg-card: #16213E;
+    --accent: #FF6B35;
+    --accent2: #6366F1;
+    --text-primary: #E8E8F0;
+    --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
+    --border: #2D2D44;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    padding: 120px 40px 80px;
+    text-align: center;
+    background: linear-gradient(180deg, #0D0D1A 0%, #1A1A3E 50%, #0D0D1A 100%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(99,102,241,0.15) 0%, transparent 70%),
+                radial-gradient(ellipse at 70% 80%, rgba(255,107,53,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .hero-meta span { margin: 0 12px; }
+
+  /* === CONTENT === */
+  .content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+  }
+  .content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 64px 0 24px;
+    color: #fff;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  .content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 40px 0 16px;
+    color: var(--accent2);
+  }
+  .content p {
+    margin-bottom: 20px;
+    color: var(--text-primary);
+  }
+  .content p.lead {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin: 32px 0;
+  }
+
+  /* === BLOCKQUOTE === */
+  blockquote {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    padding: 24px 28px;
+    margin: 32px 0;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+  blockquote .source {
+    display: block;
+    margin-top: 12px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  /* === CHART CONTAINER === */
+  .chart-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 40px 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .chart-container .chart-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .chart-container .chart-caption {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 12px;
+    text-align: right;
+    font-style: italic;
+  }
+
+  /* === INFOGRAPHIC: STAT CARDS === */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 48px 0;
+  }
+  .stat-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, #1a1a3e 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-4px); }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .stat-number {
+    font-size: 42px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), #FF9F6B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .stat-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* === TIMELINE INFOGRAPHIC === */
+  .timeline {
+    position: relative;
+    margin: 48px 0;
+    padding-left: 40px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--accent2), transparent);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 24px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(255,107,53,0.5);
+  }
+  .timeline-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .timeline-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 4px 0;
+  }
+  .timeline-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* === DIAGRAM (SVG) === */
+  .diagram-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 48px 0;
+    text-align: center;
+  }
+  .diagram-container .chart-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 16px;
+    text-align: left;
+  }
+
+  /* === SCORECARD TABLE === */
+  .scorecard {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    font-size: 15px;
+  }
+  .scorecard th {
+    background: var(--bg-card);
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scorecard td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+  .scorecard tr:hover td {
+    background: rgba(99,102,241,0.05);
+  }
+  .status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .status.confirmed {
+    background: rgba(16,185,129,0.15);
+    color: #10B981;
+  }
+  .status.ahead {
+    background: rgba(255,107,53,0.15);
+    color: #FF6B35;
+  }
+  .status.pending {
+    background: rgba(99,102,241,0.15);
+    color: #818CF8;
+  }
+
+  /* === CODE BLOCK === */
+  .code-block {
+    background: #0f0f23;
+    border: 1px solid #2d2d44;
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #a5b4fc;
+    overflow-x: auto;
+    margin: 24px 0;
+  }
+  .code-comment { color: #6B7280; }
+  .code-string { color: #FF6B35; }
+  .code-keyword { color: #818CF8; }
+
+  /* === CALLOUT === */
+  .callout {
+    background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(255,107,53,0.05));
+    border: 1px solid var(--accent2);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: var(--accent2);
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  .callout p {
+    margin-bottom: 0;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  /* === FOOTER === */
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+  }
+  .chapter-nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  @media (max-width: 640px) {
+    .stat-grid { grid-template-columns: 1fr; }
+    .hero { padding: 80px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Part I — The Predictions &bull; Chapter 1</div>
+  <h1>The February Moment</h1>
+  <p class="hero-subtitle">On February 5, 2026, two AI labs released new models on the same day. Within a week, the industry consensus shifted from "AI is getting better" to "AI already replaced me."</p>
+  <p class="hero-meta">
+    <span>Something Big Already Happened</span> &bull;
+    <span>Vol. I &mdash; Q1 2026</span> &bull;
+    <span>~4,200 words</span> &bull;
+    <span>12 min read</span>
+  </p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <p class="lead">In the span of 72 hours, the conversation around AI shifted permanently. Not because of a theoretical breakthrough. Not because of a research paper. Because people sat down at their desks on Monday morning and discovered that the work they'd planned for the week was already done.</p>
+
+  <h2>Two Drops on the Same Day</h2>
+
+  <p>On Wednesday, February 5, 2026, OpenAI released GPT-5.3 Codex. On the same day, Anthropic released Claude Opus 4.6. Neither company coordinated with the other. The timing was coincidental. The impact was not.</p>
+
+  <p>Within the AI development community, the effect was immediate. Engineers who had spent years honing their craft described the experience in strikingly similar terms: they gave the AI a task, walked away, and came back to find the work done &mdash; done better than they would have done it themselves.</p>
+
+  <blockquote>
+    "I am no longer needed for the actual technical work of my job. I describe what I want built, in plain English, and it just... appears. Not a rough draft I need to fix. The finished thing."
+    <span class="source">&mdash; Matt Shumer, "Something Big Is Happening," Feb 9, 2026</span>
+  </blockquote>
+
+  <p>Four days after the releases, Shumer published his 5,000-word essay. It was addressed not to the tech community, but to his friends and family &mdash; the people who kept asking him "so what's the deal with AI?" He wrote it because, as he put it, "the gap between what I've been saying and what is actually happening has gotten far too big."</p>
+
+  <!-- LAYER 3: INFOGRAPHIC - STAT CARDS -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-number">2</div>
+      <div class="stat-label">Frontier models released<br>on the same day</div>
+      <div class="stat-date">2026-02-05</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">72h</div>
+      <div class="stat-label">Time for industry<br>consensus to shift</div>
+      <div class="stat-date">2026-02-05 → 02-08</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">16h</div>
+      <div class="stat-label">Autonomous task duration<br>(estimated, post-release)</div>
+      <div class="stat-date">METR projection</div>
+    </div>
+  </div>
+
+  <h2>What Shipped: GPT-5.3 Codex</h2>
+
+  <p>OpenAI's release was notable not just for its capabilities, but for a single line buried in the technical documentation that would become the most-quoted sentence in AI for the month:</p>
+
+  <blockquote>
+    "GPT-5.3-Codex is our first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations."
+    <span class="source">&mdash; OpenAI Technical Documentation, Feb 5, 2026</span>
+  </blockquote>
+
+  <p>The AI helped build itself. Not as a hypothetical future scenario. As a documented engineering practice, disclosed in an official release note. The recursive improvement loop that researchers had theorized about for decades was no longer theoretical.</p>
+
+  <div class="callout">
+    <div class="callout-title">&#x26A0; Why this matters</div>
+    <p>The recursive loop &mdash; AI improving AI which improves AI &mdash; was previously an abstract concern discussed in safety research. GPT-5.3 Codex made it a product feature listed in release notes. The gap between "someday" and "shipped" closed on a Wednesday.</p>
+  </div>
+
+  <h2>What Shipped: Claude Opus 4.6</h2>
+
+  <p>Anthropic's simultaneous release brought its own set of firsts. Opus 4.6 featured a 1-million-token context window, 128K max output tokens, and a new capability called "agent teams" &mdash; the ability to spawn multiple AI instances that coordinate work in parallel, like a development team.</p>
+
+  <p>Where GPT-5.3 demonstrated the recursive loop, Opus 4.6 demonstrated something adjacent but equally significant: AI that could manage other AI. A lead agent delegating tasks to worker agents, reviewing their output, requesting revisions, and synthesizing results. Not a human directing AI. AI directing AI.</p>
+
+  <!-- LAYER 1: AUTO-GENERATED CHART -->
+  <div class="chart-container">
+    <div class="chart-label">&#x1F4CA; Layer 1: Auto-Generated from Data</div>
+    <div>                            <div id="6866eafe-5e47-405c-8dba-2d2d9fc33563" class="plotly-graph-div" style="height:420px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("6866eafe-5e47-405c-8dba-2d2d9fc33563")) {                    Plotly.newPlot(                        "6866eafe-5e47-405c-8dba-2d2d9fc33563",                        [{"marker":{"color":["#10B981","#6366F1","#10B981","#6366F1","#10B981","#6366F1","#10B981","#F59E0B","#6366F1","#10B981","#6366F1"],"line":{"width":0}},"text":["12%","22%","28%","49%","55%","62%","70%","72%","78%","88%","85%"],"textfont":{"color":"#E0E0E0","size":11},"textposition":"outside","x":["GPT-4","Claude 3","GPT-4o","Claude 3.5\nSonnet","o1","Claude 3.5\nOpus","GPT-5","Gemini 2\nUltra","Claude\nOpus 4.5","GPT-5.3\nCodex","Claude\nOpus 4.6"],"y":[12,22,28,49,55,62,70,72,78,88,85],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"font":{"size":16,"color":"#E0E0E0"},"text":"SWE-bench Scores by Model Release"},"xaxis":{"title":{"text":""},"gridcolor":"#333","color":"#AAA","tickangle":-30},"yaxis":{"title":{"text":"SWE-bench Score (%)"},"range":[0,100],"gridcolor":"#333","color":"#AAA"},"font":{"color":"#E0E0E0","family":"Inter, sans-serif"},"margin":{"l":60,"r":30,"t":60,"b":80},"plot_bgcolor":"#1A1A2E","paper_bgcolor":"#1A1A2E","height":420,"showlegend":false},                        {"responsive": true}                    )                };            </script>        </div>
+    <div class="chart-caption">Source: SWE-bench leaderboard. Scores represent % of real-world GitHub issues resolved autonomously. Chart auto-generated from data/swe-bench.csv</div>
+  </div>
+
+  <h2>The METR Trajectory</h2>
+
+  <p>To understand why February 2026 was a watershed, you need to understand METR &mdash; an independent organization that measures how long AI can work autonomously on real-world tasks, measured in human-expert hours.</p>
+
+  <p>The trajectory tells the story more clearly than any essay:</p>
+
+  <!-- LAYER 3: INFOGRAPHIC - TIMELINE -->
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">Early 2024</div>
+      <div class="timeline-title">~10 minutes</div>
+      <div class="timeline-desc">AI could handle simple, isolated tasks. Useful, but clearly limited. Like a helpful but unreliable intern.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">Mid 2024</div>
+      <div class="timeline-title">~1 hour</div>
+      <div class="timeline-desc">Multi-step tasks became feasible. AI could maintain context across a sequence of related actions.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">Late 2025</div>
+      <div class="timeline-title">~5 hours</div>
+      <div class="timeline-desc">Claude Opus 4.5 measured at nearly 5 hours of autonomous expert-level work. This was the last measurement before February.</div>
+    </div>
+    <div class="timeline-item" style="border-color: var(--accent);">
+      <div class="timeline-year" style="color: #FF6B35; font-size: 15px;">February 2026</div>
+      <div class="timeline-title" style="font-size: 22px;">~16 hours (estimated)</div>
+      <div class="timeline-desc">METR hasn't officially measured the February models yet. But based on user reports and benchmark proxies, the jump is estimated at 3x or more. Engineers report giving tasks in the morning and receiving completed work the next day.</div>
+    </div>
+  </div>
+
+  <!-- LAYER 1: AUTO-GENERATED CHART -->
+  <div class="chart-container">
+    <div class="chart-label">&#x1F4CA; Layer 1: Auto-Generated from Data</div>
+    <div>                            <div id="6c08862d-8d2e-48dd-9a1a-b0d4920692f5" class="plotly-graph-div" style="height:450px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("6c08862d-8d2e-48dd-9a1a-b0d4920692f5")) {                    Plotly.newPlot(                        "6c08862d-8d2e-48dd-9a1a-b0d4920692f5",                        [{"fill":"tozeroy","fillcolor":"rgba(255,107,53,0.1)","line":{"color":"#FF6B35","width":3},"marker":{"size":10,"symbol":"circle"},"mode":"lines+markers","name":"Measured","x":["Jan 2024","Apr 2024","Jul 2024","Oct 2024","Jan 2025","Apr 2025","Jul 2025","Nov 2025","Feb 2026"],"y":[0.17,0.33,0.75,1.2,2.0,3.2,4.0,5.0,16.0],"type":"scatter"},{"line":{"color":"#FF6B35","dash":"dash","width":2},"marker":{"size":8,"symbol":"diamond"},"mode":"lines+markers","name":"Projected (doubling every 7 months)","x":["Nov 2025","Feb 2026","Jun 2026","Oct 2026","Feb 2027"],"y":[5.0,12,24,72,168],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"annotations":[{"arrowhead":2,"bgcolor":"rgba(0,0,0,0.7)","bordercolor":"#FF6B35","font":{"color":"#FF6B35","size":12},"showarrow":true,"text":"Opus 4.6 + GPT-5.3\u003cbr\u003e\u003cb\u003eThe February Moment\u003c\u002fb\u003e","x":"Feb 2026","y":16}],"title":{"font":{"size":16,"color":"#E0E0E0"},"text":"AI Task Completion: Hours of Human-Expert Work Done Autonomously"},"xaxis":{"title":{"text":""},"gridcolor":"#333","color":"#AAA"},"yaxis":{"title":{"text":"Hours (human expert equivalent)"},"type":"log","gridcolor":"#333","color":"#AAA"},"font":{"color":"#E0E0E0","family":"Inter, sans-serif"},"legend":{"bgcolor":"rgba(0,0,0,0.5)","bordercolor":"#444"},"margin":{"l":60,"r":30,"t":60,"b":40},"plot_bgcolor":"#1A1A2E","paper_bgcolor":"#1A1A2E","height":450},                        {"responsive": true}                    )                };            </script>        </div>
+    <div class="chart-caption">Source: METR.org (measured through Nov 2025), Feb 2026 estimated from user reports. Doubling time: ~7 months (accelerating to ~4). Chart auto-generated from data/metr-benchmarks.csv</div>
+  </div>
+
+  <h3>What the Doubling Means</h3>
+
+  <p>If the trend holds &mdash; and it has held for years with no sign of flattening &mdash; the implications are worth stating plainly:</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-number">Days</div>
+      <div class="stat-label">Autonomous work duration<br>by late 2026</div>
+      <div class="stat-date">~7 month doubling</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">Weeks</div>
+      <div class="stat-label">Autonomous work duration<br>by mid 2027</div>
+      <div class="stat-date">projected</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">Months</div>
+      <div class="stat-label">Autonomous work duration<br>by early 2028</div>
+      <div class="stat-date">projected</div>
+    </div>
+  </div>
+
+  <!-- LAYER 2: SVG DIAGRAM -->
+  <div class="diagram-container">
+    <div class="chart-label">&#x1F504; Layer 2: Architecture Diagram</div>
+    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+      <!-- Background -->
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#818CF8;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#FF9F6B;stop-opacity:1" />
+        </linearGradient>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#FF6B35" />
+        </marker>
+      </defs>
+      
+      <!-- Title -->
+      <text x="350" y="30" text-anchor="middle" fill="#E0E0E0" font-family="Inter" font-size="16" font-weight="700">The Recursive Improvement Loop</text>
+      <text x="350" y="50" text-anchor="middle" fill="#6B7280" font-family="Inter" font-size="12">How AI is now building the next generation of AI</text>
+      
+      <!-- Nodes -->
+      <rect x="250" y="70" width="200" height="50" rx="25" fill="url(#grad1)" />
+      <text x="350" y="100" text-anchor="middle" fill="white" font-family="Inter" font-size="14" font-weight="600">Current AI Model</text>
+      
+      <rect x="480" y="150" width="200" height="50" rx="25" fill="url(#grad2)" />
+      <text x="580" y="180" text-anchor="middle" fill="white" font-family="Inter" font-size="14" font-weight="600">Writes Training Code</text>
+      
+      <rect x="250" y="230" width="200" height="50" rx="25" fill="url(#grad2)" />
+      <text x="350" y="260" text-anchor="middle" fill="white" font-family="Inter" font-size="14" font-weight="600">Debugs &amp; Optimizes</text>
+      
+      <rect x="20" y="150" width="200" height="50" rx="25" fill="url(#grad1)" />
+      <text x="120" y="180" text-anchor="middle" fill="white" font-family="Inter" font-size="14" font-weight="600">Smarter AI Model</text>
+      
+      <!-- Arrows -->
+      <path d="M 450 95 Q 520 95 520 150" fill="none" stroke="#FF6B35" stroke-width="2.5" marker-end="url(#arrowhead)" />
+      <path d="M 530 200 Q 530 260 450 260" fill="none" stroke="#FF6B35" stroke-width="2.5" marker-end="url(#arrowhead)" />
+      <path d="M 250 260 Q 180 260 180 200" fill="none" stroke="#FF6B35" stroke-width="2.5" marker-end="url(#arrowhead)" />
+      <path d="M 120 150 Q 120 95 250 95" fill="none" stroke="#FF6B35" stroke-width="2.5" marker-end="url(#arrowhead)" />
+      
+      <!-- Center label -->
+      <text x="350" y="170" text-anchor="middle" fill="#FF6B35" font-family="JetBrains Mono" font-size="18" font-weight="700">&#x267E;</text>
+      <text x="350" y="190" text-anchor="middle" fill="#6B7280" font-family="Inter" font-size="11">Each cycle produces</text>
+      <text x="350" y="204" text-anchor="middle" fill="#6B7280" font-family="Inter" font-size="11">a more capable model</text>
+    </svg>
+  </div>
+
+  <h2>The Prediction Scorecard</h2>
+
+  <p>One of the core functions of this book is to track predictions against reality. Below is the first scorecard entry for the February moment:</p>
+
+  <!-- LAYER 1: AUTO-GENERATED CHART -->
+  <div class="chart-container">
+    <div class="chart-label">&#x1F4CA; Layer 1: Auto-Generated from Data</div>
+    <div>                            <div id="e8e3a0f2-7011-4353-9db8-8d7ddac4ed29" class="plotly-graph-div" style="height:480px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("e8e3a0f2-7011-4353-9db8-8d7ddac4ed29")) {                    Plotly.newPlot(                        "e8e3a0f2-7011-4353-9db8-8d7ddac4ed29",                        [{"marker":{"color":"#6366F1","line":{"color":"#A5B4FC","width":2},"opacity":0.8,"size":18},"mode":"markers+text","name":"Dario Amodei","showlegend":false,"text":["Amodei: 50% entry-level\u003cbr\u003ejobs in 1-5 years"],"textfont":{"color":"#CCC","size":9},"textposition":"top center","x":[75],"y":[40],"type":"scatter"},{"marker":{"color":"#6366F1","line":{"color":"#A5B4FC","width":2},"opacity":0.8,"size":18},"mode":"markers+text","name":"Matt Shumer","showlegend":false,"text":["Shumer: AI does my\u003cbr\u003ejob better than me"],"textfont":{"color":"#CCC","size":9},"textposition":"top center","x":[90],"y":[95],"type":"scatter"},{"marker":{"color":"#6366F1","line":{"color":"#A5B4FC","width":2},"opacity":0.8,"size":18},"mode":"markers+text","name":"Industry consensus","showlegend":false,"text":["GPT-5 will write\u003cbr\u003eproduction code"],"textfont":{"color":"#CCC","size":9},"textposition":"top center","x":[60],"y":[88],"type":"scatter"},{"marker":{"color":"#6366F1","line":{"color":"#A5B4FC","width":2},"opacity":0.8,"size":18},"mode":"markers+text","name":"OpenAI internal","showlegend":false,"text":["AI builds next AI\u003cbr\u003e(recursive loop)"],"textfont":{"color":"#CCC","size":9},"textposition":"top center","x":[30],"y":[70],"type":"scatter"},{"marker":{"color":"#6366F1","line":{"color":"#A5B4FC","width":2},"opacity":0.8,"size":18},"mode":"markers+text","name":"METR projection","showlegend":false,"text":["10hr autonomous\u003cbr\u003etask completion"],"textfont":{"color":"#CCC","size":9},"textposition":"top center","x":[65],"y":[80],"type":"scatter"},{"marker":{"color":"#6366F1","line":{"color":"#A5B4FC","width":2},"opacity":0.8,"size":18},"mode":"markers+text","name":"Law firm partners","showlegend":false,"text":["AI replaces junior\u003cbr\u003eassociates (law)"],"textfont":{"color":"#CCC","size":9},"textposition":"top center","x":[50],"y":[55],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"shapes":[{"line":{"color":"#FF6B35","dash":"dash","width":1},"type":"line","x0":0,"x1":100,"y0":0,"y1":100}],"annotations":[{"font":{"color":"#FF6B35","size":10},"showarrow":false,"text":"Prediction = Reality","textangle":-38,"x":85,"y":80}],"title":{"font":{"size":16,"color":"#E0E0E0"},"text":"Prediction Confidence vs. Actual Realization (Feb 2026)"},"xaxis":{"title":{"text":"Prediction Confidence (%)"},"range":[0,105],"gridcolor":"#333","color":"#AAA"},"yaxis":{"title":{"text":"Realization Score (%)"},"range":[0,105],"gridcolor":"#333","color":"#AAA"},"font":{"color":"#E0E0E0","family":"Inter, sans-serif"},"margin":{"l":60,"r":30,"t":60,"b":60},"plot_bgcolor":"#1A1A2E","paper_bgcolor":"#1A1A2E","height":480},                        {"responsive": true}                    )                };            </script>        </div>
+    <div class="chart-caption">Points above the dashed line = reality exceeded the prediction. Chart auto-generated from data/prediction-scorecard.csv</div>
+  </div>
+
+  <!-- SCORECARD TABLE -->
+  <table class="scorecard">
+    <thead>
+      <tr>
+        <th>Prediction</th>
+        <th>Who</th>
+        <th>When</th>
+        <th>Status (Feb 2026)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AI will write production-quality code autonomously</td>
+        <td>Industry consensus</td>
+        <td>2024</td>
+        <td><span class="status confirmed">&#x2713; Confirmed</span></td>
+      </tr>
+      <tr>
+        <td>AI will help build the next AI</td>
+        <td>OpenAI</td>
+        <td>2024</td>
+        <td><span class="status ahead">&#x26A1; Ahead of schedule</span></td>
+      </tr>
+      <tr>
+        <td>50% entry-level white-collar job displacement in 1-5 years</td>
+        <td>Dario Amodei</td>
+        <td>2025</td>
+        <td><span class="status pending">&#x23F3; In progress</span></td>
+      </tr>
+      <tr>
+        <td>AI completes multi-day tasks autonomously</td>
+        <td>METR trajectory</td>
+        <td>2025</td>
+        <td><span class="status ahead">&#x26A1; Ahead of schedule</span></td>
+      </tr>
+      <tr>
+        <td>AI demonstrates "judgment" and "taste"</td>
+        <td>Matt Shumer</td>
+        <td>Feb 2026</td>
+        <td><span class="status confirmed">&#x2713; Confirmed (subjective)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>What This Chapter Established</h2>
+
+  <p>February 5, 2026 was not the day AI became dangerous, or the day jobs started disappearing, or the day the singularity arrived. It was the day the evidence became undeniable.</p>
+  
+  <p>The models that shipped weren't incremental improvements. They represented a qualitative shift &mdash; from AI as a tool you direct to AI as a worker you delegate to. The recursive loop went from theory to product documentation. The autonomous task duration jumped from hours to what appears to be days.</p>
+  
+  <p>And perhaps most importantly, the people who build this technology &mdash; the ones closest to it, the ones who understand it best &mdash; started writing essays to their families. Not about what might happen. About what already did.</p>
+
+  <p>The next chapter examines who else saw this coming, how far in advance they called it, and what they got right and wrong.</p>
+
+  <!-- CHAPTER NAV -->
+  <div class="chapter-nav">
+    <a href="#">&larr; Introduction</a>
+    <a href="#">Chapter 2: The Insiders Who Warned Us &rarr;</a>
+  </div>
+
+</div>
+
+</body>
+</html>

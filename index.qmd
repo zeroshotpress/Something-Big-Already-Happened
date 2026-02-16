@@ -1,0 +1,62 @@
+# Welcome {.unnumbered}
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="lead">
+<p><strong>Something Big Already Happened</strong> is a living document that tracks the AI predictions that came true — and what they mean for what comes next.</p>
+</div>
+```
+:::
+
+::: {.content-hidden when-format="html"}
+**Something Big Already Happened** is a living document that tracks the AI predictions that came true — and what they mean for what comes next.
+:::
+
+## About This Book
+
+In the rush to predict what artificial intelligence *will* do, we often overlook what it *has already done*. Breakthroughs that once seemed decades away have quietly arrived. Capabilities that experts called impossible are now routine. The future we were promised? Much of it is already here.
+
+This book is a systematic effort to document those moments — the predictions, the timelines, the expert consensus, and the reality that overtook all of them.
+
+## This Is a Living Document
+
+Unlike a traditional book, *Something Big Already Happened* is continuously updated as new predictions come true and new evidence emerges. Each chapter includes:
+
+- **Original predictions** with full source attribution
+- **Verification data** showing when and how predictions were fulfilled
+- **Structured timelines** comparing expected vs. actual arrival dates
+- **Analysis** of what each fulfilled prediction means for the broader trajectory
+
+## How to Read This Book
+
+::: {.callout-tip}
+## Multiple Formats Available
+
+- **Web edition** (you are here): Full interactive experience with search, dark mode, and live data visualizations
+- **EPUB**: For e-readers and mobile devices
+- **PDF**: Print-ready edition formatted for physical reading
+:::
+
+The book is organized in five parts across fourteen chapters:
+
+1. **The Predictions** — What experts said would happen, and when
+2. **The Evidence** — Systematic verification across benchmarks, autonomy, model releases, and human impact
+3. **The Inflection** — The recursive improvement loop, the November revolution, the software factory, and compounding AI teams
+4. **The Broader Impact** — The investment tsunami and the geopolitical chessboard
+5. **What Comes Next** — Science acceleration and what it all means for the road ahead
+
+You can read straight through or jump to any chapter that interests you. Each chapter is self-contained, though the cumulative argument builds across all five parts.
+
+## Last Updated
+
+This edition was last updated on {{< meta date >}}.
+
+---
+
+::: {.callout-note}
+## Open Source
+
+This book is produced by the S.H. Ash. Source files, data, and methodology are all openly available. If you find an error or want to suggest an addition, please open an issue on our repository.
+
+Text content © 2026 S.H. Ash. All rights reserved. Code, data, and scripts are released under the MIT License. See LICENSE in the source repository for details.
+:::

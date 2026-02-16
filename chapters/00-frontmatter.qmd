@@ -1,0 +1,48 @@
+# Front Matter {.unnumbered .unlisted}
+
+::: {.frontmatter}
+
+**Something Big Already Happened: Tracking the AI Predictions That Came True**
+
+First published February 2026
+
+Text content © 2026 S.H. Ash. All rights reserved. Code, data, and scripts are released under the MIT License. See LICENSE in the source repository for details.
+
+No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+
+**ISBN:** [To be assigned by KDP]
+
+**Edition:** v1.0 --- February 14, 2026
+
+---
+
+### AI-Assisted Production Disclosure
+
+This book was produced with the assistance of AI tools including Claude (Anthropic) for research aggregation, draft generation, and editorial workflows. All factual claims have been verified against primary sources. The 229 citations reference official papers, company announcements, government filings, and Tier-1 journalism. No AI-generated images are used; all charts and visualizations were generated from verified datasets using Python (matplotlib/seaborn).
+
+The author maintains full editorial responsibility for all content, claims, and conclusions presented in this work.
+
+---
+
+### Disclaimer
+
+This book is provided for informational and educational purposes only. It does not constitute investment, financial, legal, or professional advice. The analysis of company valuations, market trends, funding rounds, and employment statistics reflects publicly available information as of the publication date and should not be used as the basis for investment decisions.
+
+All trademarks, service marks, product names, and company names mentioned in this book are the property of their respective owners. Their use does not imply endorsement by or affiliation with the trademark holders.
+
+---
+
+### Living Document Notice
+
+This book is a **living document**. The printed and eBook editions represent a point-in-time snapshot (v1.0, February 2026). The AI field evolves rapidly --- predictions may be confirmed, revised, or falsified after publication.
+
+For the latest edition with updated scorecards and evidence:
+
+- **Web edition:** [https://zeroshotpress.github.io/Something-Big-Already-Happened/](https://zeroshotpress.github.io/Something-Big-Already-Happened/)
+- **Source repository:** [https://github.com/zeroshotpress/Something-Big-Already-Happened](https://github.com/zeroshotpress/Something-Big-Already-Happened)
+- **Update schedule:** Quarterly (v1.1, v1.2, etc.)
+- **Changelog:** Available in the repository's `reports/` directory
+
+Corrections, source updates, and evidence submissions are welcome via GitHub Issues.
+
+:::

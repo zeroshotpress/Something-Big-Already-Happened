@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-02-13",
+  "phase": "Phase 0 — Baseline",
+  "summary": {
+    "total_words": 61597,
+    "target_words": "80000-85000",
+    "words_deficit": 18403,
+    "chapters": 14,
+    "pdf_pages": 240,
+    "target_pages": "190-210",
+    "words_per_page": 257
+  },
+  "gate_results": {
+    "verify_counts": {"exit_code": 1, "reason": "19 SWE-bench score mismatches; word count below target"},
+    "source_audit": {"exit_code": 1, "reason": "20 Tier-3 violations; 146 unregistered citations"},
+    "voice_audit": {"exit_code": 1, "reason": "55 banned AI-voice words across 14 chapters"},
+    "image_dpi_check": {"exit_code": 0, "reason": "All 30 images pass (300 DPI, no missing refs)"},
+    "quote_audit": {"exit_code": 1, "reason": "1 over-length quote (50 words in Ch7)"},
+    "preflight_kdp": {"exit_code": 0, "reason": "PDF 6x9, all fonts embedded, 240 pages, 4.3MB"}
+  },
+  "gates_passing": 2,
+  "gates_failing": 4,
+  "key_issues": {
+    "tier3_violations": {
+      "count": 20,
+      "unique_keys": ["deepseek2024_v3", "deepseek2025_r1", "wiki_gpt4", "wiki_gpt4o", "wiki_gemini", "wiki_claude", "microsoft2025_jobs", "altman2025_future", "openai2024_funding"],
+      "affected_chapters": ["Ch1", "Ch2", "Ch3", "Ch5", "Ch6", "Ch11", "Ch12"]
+    },
+    "banned_words": {
+      "count": 55,
+      "top_offenders": {
+        "landscape": 18,
+        "navigate": 9,
+        "comprehensive": 9,
+        "nuanced": 6,
+        "crucial": 5,
+        "leverage": 7,
+        "robust": 2,
+        "at the heart of": 1,
+        "pivotal": 1,
+        "paradigm shift": 1,
+        "it is worth noting": 1,
+        "underscore": 1
+      }
+    },
+    "word_count_deficit": {
+      "current": 61597,
+      "target_min": 80000,
+      "deficit": 18403,
+      "avg_per_chapter_needed": 1315
+    },
+    "over_length_quotes": [
+      {"chapter": "07-recursive-loop.qmd", "line": 51, "words": 50, "limit": 25}
+    ]
+  },
+  "chapter_word_counts": {
+    "01-the-prediction.qmd": 4992,
+    "02-voices-of-warning.qmd": 4356,
+    "03-benchmark-revolution.qmd": 3940,
+    "04-autonomous-frontier.qmd": 3862,
+    "05-model-avalanche.qmd": 4918,
+    "06-human-cost.qmd": 5319,
+    "07-recursive-loop.qmd": 4699,
+    "08-november-revolution.qmd": 3945,
+    "09-software-factory.qmd": 4162,
+    "10-compounding-teams.qmd": 3987,
+    "11-investment-tsunami.qmd": 3974,
+    "12-geopolitical-chessboard.qmd": 4637,
+    "13-science-acceleration.qmd": 4062,
+    "14-what-now.qmd": 4744
+  }
+}

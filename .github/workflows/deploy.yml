@@ -1,0 +1,65 @@
+name: Deploy Book to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache Quarto
+        uses: actions/cache@v4
+        with:
+          path: |
+            _freeze
+            .quarto
+          key: quarto-${{ runner.os }}-${{ hashFiles('**/*.qmd', '_quarto.yml') }}
+          restore-keys: |
+            quarto-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install chart dependencies
+        run: pip install matplotlib seaborn numpy pandas
+
+      - name: Generate charts
+        run: python scripts/generate_charts.py
+
+      - name: Render HTML
+        run: quarto render --to html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _book
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

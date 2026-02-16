@@ -1,0 +1,102 @@
+{
+  "script": "voice_audit",
+  "exit_code": 0,
+  "chapters_scanned": 15,
+  "total_banned_words": 0,
+  "total_pattern_violations": 0,
+  "burstiness_failures": 0,
+  "chapter_details": {
+    "00-frontmatter.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 13.37,
+      "burstiness_fail": false
+    },
+    "01-the-prediction.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 11.53,
+      "burstiness_fail": false
+    },
+    "02-voices-of-warning.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 15.08,
+      "burstiness_fail": false
+    },
+    "03-benchmark-revolution.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 18.68,
+      "burstiness_fail": false
+    },
+    "04-autonomous-frontier.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 18.62,
+      "burstiness_fail": false
+    },
+    "05-model-avalanche.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 14.99,
+      "burstiness_fail": false
+    },
+    "06-human-cost.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 9.97,
+      "burstiness_fail": false
+    },
+    "07-recursive-loop.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 14.03,
+      "burstiness_fail": false
+    },
+    "08-november-revolution.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 12.76,
+      "burstiness_fail": false
+    },
+    "09-software-factory.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 12.64,
+      "burstiness_fail": false
+    },
+    "10-compounding-teams.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 12.14,
+      "burstiness_fail": false
+    },
+    "11-investment-tsunami.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 10.7,
+      "burstiness_fail": false
+    },
+    "12-geopolitical-chessboard.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 12.42,
+      "burstiness_fail": false
+    },
+    "13-science-acceleration.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 12.21,
+      "burstiness_fail": false
+    },
+    "14-what-now.qmd": {
+      "banned_words": [],
+      "pattern_violations": [],
+      "burstiness_stdev": 19.34,
+      "burstiness_fail": false
+    }
+  },
+  "errors": [],
+  "warnings": []
+}
