@@ -255,7 +255,7 @@ If you are reading in 2027, some of the "too early to assess" predictions may ha
 ::: {.callout-tip}
 ## How to Stay Updated
 
-This book is produced by the S.H. Ash as an open-source project. Data, methodology, and source files are publicly available. To receive updates, watch the project repository. To suggest corrections or additions, open an issue. The prediction scorecard is updated quarterly.
+This book is produced by S.H. Ash as an open-source project. Data, methodology, and source files are publicly available. To receive updates, watch the project repository. To suggest corrections or additions, open an issue. The prediction scorecard is updated quarterly.
 :::
 
 ## A Final Word on Uncertainty

@@ -1,5 +1,9 @@
 # Something Big Already Happened
 
+**Author:** S.H. Ash
+**Repository:** github.com/zeroshotpress/Something-Big-Already-Happened
+**Contact:** SomethingBigAlreadyHappened@zeroshotpress.com
+
 A living, evidence-first narrative tracking how AI predictions convert into
 measurable reality — month by month — using primary sources, reproducible data,
 and falsifiable scorecards.

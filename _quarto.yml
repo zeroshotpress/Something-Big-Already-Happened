@@ -47,6 +47,7 @@ book:
       chapters:
         - chapters/13-science-acceleration.qmd
         - chapters/14-what-now.qmd
+    - chapters/about-the-author.qmd
 
 bibliography: references/sources.bib
 csl: references/chicago-author-date.csl
